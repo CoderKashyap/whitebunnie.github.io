@@ -1660,7 +1660,6 @@
 .results-showcase-section {
   background-color: var(--clr-white, #ffffff);
   padding: var(--section-pad, 80px) 24px;
-  font-family: var(--font, system-ui, -apple-system, sans-serif);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1870,5 +1869,206 @@
 
   .stat-minimal-card {
     padding: 36px 20px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Container Framework & Premium Mesh Background Setup */
+.services-matrix-section {
+  background-color: #ffffff;
+  position: relative;
+  padding: 100px 24px;
+  overflow: hidden;
+}
+
+/* Modern clean background gradient styling */
+.services-mesh-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(233, 176, 45, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(228, 166, 23, 0.03) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.services-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header Typography Layout */
+.services-header-block {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 64px auto;
+}
+
+.services-title {
+  color: #111111;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  /* letter-spacing: -0.01em; */
+  margin: 0 0 16px 0;
+}
+
+.services-tagline {
+  color: #e4a617;
+  /* Theme gold text */
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Perfect 3x2 Grid Setup for Large Displays */
+.services-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Premium Card Design with Strict 8px Specification */
+.service-premium-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  /* Strict 8px border-radius rule */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Decorative subtle top edge indicator accent */
+.card-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+/* Advanced Hover Micro-interactions */
+.service-premium-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(233, 176, 45, 0.4);
+  box-shadow: 0 20px 40px rgba(233, 176, 45, 0.07);
+}
+
+.service-premium-card:hover .card-top-accent {
+  background: linear-gradient(90deg, #e9b02d 0%, #e4a617 100%);
+}
+
+/* Card Typography Hierarchy Content Blocks */
+.card-body {
+  padding: 40px 32px 16px 32px;
+}
+
+.card-heading {
+  color: #111111;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.01em;
+}
+
+.card-sub-italic {
+  color: #666666;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.card-description {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.card-footer-action {
+  padding: 0 32px 40px 32px;
+}
+
+/* Advanced Full Transition Call to Action Buttons with 8px Radius */
+.btn-service-transition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #e9b02d;
+  /* Primary yellow-gold theme fill */
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  /* Strict 8px border-radius rule */
+  
+  box-sizing: border-box;
+  border: 2px solid #e9b02d;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* Complete Inverse Transition Hover Pattern */
+.btn-service-transition:hover {
+  background-color: transparent;
+  border-color: #111111;
+  color: #111111;
+}
+
+.card-footer-action a {
+  text-decoration: none;
+}
+
+/* Clean Viewport Responsiveness Breaking Rules */
+@media (max-width: 1024px) {
+  .services-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .services-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .services-matrix-section {
+    padding: 60px 16px;
+  }
+
+  .services-card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-body {
+    padding: 32px 24px 16px 24px;
+  }
+
+  .card-footer-action {
+    padding: 0 24px 32px 24px;
   }
 }
