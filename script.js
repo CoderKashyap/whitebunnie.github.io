@@ -313,8 +313,10 @@ function createWBSlide() {
 }
 
 // Duplicate slides for smooth loop
-wbTrack.appendChild(createWBSlide());
-wbTrack.appendChild(createWBSlide());
+if (wbTrack) {
+    wbTrack.appendChild(createWBSlide());
+    wbTrack.appendChild(createWBSlide());
+}
 
 
 
