@@ -396,7 +396,8 @@ h2.h-main em {
 
 .btn-primary {
   border: 1px solid black;
-  background: var(--btn-primary-bg);
+  /* background: var(--btn-primary-bg); */
+  background-color: white;
   color: black;
   /* border: 1px solid var(--clr-primary); */
   /* color: var(--btn-primary-clr); */

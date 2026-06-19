@@ -82,6 +82,10 @@
   --hero-node-border: rgba(53, 56, 60, 0.22);
   --hero-node-text: #32353b;
   --hero-node-shadow: 0 20px 34px rgba(85, 90, 98, 0.14);
+  
+  --hero-grid-major: rgba(120, 120, 120, 0.18);
+  --hero-grid-minor: rgba(120, 120, 120, 0.08);
+
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -2248,8 +2252,14 @@ h2.h-main em {
    9. AI AUDIT CTA (dark)
 ══════════════════════════════════════════════════════════ */
 .ai-audit-cta {
-  background: var(--clr-dark-bg);
+  /* background: var(--clr-dark-bg); */
   padding: 56px 0;
+  border-radius: 0;
+  
+}
+
+.ai-audit-cta:hover {
+  transform: translateY(0px);
 }
 
 .ai-audit-inner {

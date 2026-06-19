@@ -709,3 +709,31 @@ document.addEventListener('DOMContentLoaded', () => {
         track.style.animationDuration = Math.max(18, singleW / 80) + 's';
     });
 })();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navPills = document.querySelectorAll(".hub-nav-pill");
+  const consolePanes = document.querySelectorAll(".console-pane");
+
+  navPills.forEach((pill) => {
+    // Listens to click events for seamless multi-device tracking control
+    pill.addEventListener("click", () => {
+      const targetId = pill.getAttribute("data-target");
+
+      // 1. Terminate all active states from tracking layers
+      navPills.forEach((p) => p.classList.remove("active"));
+      consolePanes.forEach((pane) => {
+        pane.classList.remove("active");
+      });
+
+      // 2. Initialize tracking updates to newly targeted nodes
+      pill.classList.add("active");
+      
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) {
+        // Trigger temporary display block before structural opacity fade-in initialization
+        targetPane.classList.add("active");
+      }
+    });
+  });
+});
