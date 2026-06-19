@@ -1044,20 +1044,6 @@ h2.h-main em {
   overflow: hidden;
 }
 
-/* Grid Pattern */
-/* .wbn-hero-zone::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
-    background-size: 52px 52px;
-    pointer-events: none;
-} */
-
-
-
 
 .wbn-hero-zone-two::before {
   content: '';

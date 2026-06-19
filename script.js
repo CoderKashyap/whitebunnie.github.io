@@ -74,21 +74,21 @@ if (revealEls.length && 'IntersectionObserver' in window) {
 // Client Video Reviews carousel
 const csCards = [
     {
-        video: './newHome/Testimonial.mp4',
-        review: '"Brought real clarity and measurable results to our digital strategy. Highly recommended!"',
-        name: 'Pooja Jauhari',
-        designation: 'Founder & CEO, EMoMee'
+        video: './video/cheng.mp4',
+        review: '"Impressive team, fast execution, and growth-driven strategies delivering exceptional content consistently."',
+        name: 'Randy Cheng',
+        designation: 'Founder & CEO, Collab Management Group'
     },
     {
-        video: './newHome/Testimonial.mp4',
-        review: '"Their team invested deeply in our growth. The performance was beyond what we expected."',
-        name: 'Brijesh Bharadwaj',
-        designation: 'Co-Founder, Segwise.ai'
+        video: './video/seth.mp4',
+        review: '"Exceptional dedication, attentiveness, and productivity make WhiteBunnie a reliable growth partner."',
+        name: 'Seth Kleinman',
+        designation: 'Co-Founder, Go Remote Cr'
     },
     {
-        video: './newHome/Testimonial.mp4',
+        video: './video/Christina.mp4',
         review: '"Their team invested deeply in our growth. The performance was beyond what we expected."',
-        name: 'Brijesh Bharadwaj',
+        name: 'Christina',
         designation: 'Co-Founder, Segwise.ai'
     },
     {
@@ -98,7 +98,7 @@ const csCards = [
         designation: 'Partner, Fireside Ventures | ex-CXO, Flipkart'
     }
 ];
-let csPage = 0;
+let csPage = 0; 
 const csPerPage = 3;
 const csTotal = csCards.length;
 const csTotalPages = Math.ceil(csTotal / csPerPage);
