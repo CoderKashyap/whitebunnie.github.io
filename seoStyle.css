@@ -1713,7 +1713,9 @@
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
-.hud-ambient-glow {
+
+
+.hud-ambient-glow { 
   position: absolute;
   width: 150px;
   height: 150px;
