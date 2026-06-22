@@ -238,9 +238,6 @@
 
 
 
-
-
-
 /* Dark Premium Grid Layout mapping to your dark tokens */
 .flat-stats-bar-dark {
   background-color: var(--clr-dark-bg);
@@ -2860,8 +2857,8 @@
 
 /* Color Token Variables Setup */
 :root {
-  --hero-grid-major: rgba(255, 255, 255, 0.05);
-  --hero-grid-minor: rgba(255, 255, 255, 0.015);
+  --hero-grid-major-two: rgba(255, 255, 255, 0.05);
+  --hero-grid-minor-two: rgba(255, 255, 255, 0.015);
   --brand-gold: var(--clr-primary);
   --brand-gold-dk: var(--clr-primary-dk);
   --bg-obsidian: #0b0c10;
@@ -2879,10 +2876,10 @@
   content: "";
   position: absolute;
   background-image: 
-    linear-gradient(var(--hero-grid-major) 1px, transparent 1px), 
-    linear-gradient(90deg, var(--hero-grid-major) 1px, transparent 1px), 
-    linear-gradient(var(--hero-grid-minor) 1px, transparent 1px), 
-    linear-gradient(90deg, var(--hero-grid-minor) 1px, transparent 1px);
+    linear-gradient(var(--hero-grid-major-two) 1px, transparent 1px), 
+    linear-gradient(90deg, var(--hero-grid-major-two) 1px, transparent 1px), 
+    linear-gradient(var(--hero-grid-minor-two) 1px, transparent 1px), 
+    linear-gradient(90deg, var(--hero-grid-minor-two) 1px, transparent 1px);
   background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
   pointer-events: none;
   inset: 0px;
@@ -3838,6 +3835,7 @@
     padding: 0 14px;
   }
 }
+
 
 
 

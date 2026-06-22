@@ -1049,11 +1049,36 @@ h2.h-main em {
    WHITE BUNNIE HERO
 ════════════════════════════════════════ */
 
+.wbn-hero-zone-blue {
+  position: relative;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+
+.wbn-hero-zone-two-blue::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--hero-grid-major) 1px, transparent 1px), linear-gradient(90deg, var(--hero-grid-major) 1px, transparent 1px), linear-gradient(var(--hero-grid-minor) 1px, transparent 1px), linear-gradient(90deg, var(--hero-grid-minor) 1px, transparent 1px);
+
+  /* Denser grid */
+  background-size:
+    80px 80px,
+    80px 80px,
+    16px 16px,
+    16px 16px;
+
+  pointer-events: none;
+}
+
+
 .wbn-hero-zone {
   position: relative;
   padding: 130px 0 100px;
   overflow: hidden;
 }
+
 
 
 .wbn-hero-zone-two::before {
