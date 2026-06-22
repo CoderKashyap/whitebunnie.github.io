@@ -236,31 +236,61 @@
 	</section>
 
 
-	<section class="flat-stats-bar-dark" data-nav-theme="dark">
-		<div class="stats-bar-container">
+	<section class="seo-kpi-strip" data-nav-theme="dark">
+		<div class="kpi-wrap">
 
-			<div class="flat-stat-item">
-				<div class="flat-number-ghost">35<sup>+</sup></div>
-				<p class="flat-stat-label">Years Team Expertise</p>
+			<div class="kpi-card">
+				<div class="kpi-header">
+					<span class="kpi-tag">Experience</span>
+					<div class="kpi-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				</div>
+				<div class="kpi-value">35<sup>+</sup></div>
+				<div class="kpi-track"><div class="kpi-fill" style="--pct:70%"></div></div>
+				<p class="kpi-desc">Years Team Expertise</p>
 			</div>
 
-			<div class="flat-stat-item">
-				<div class="flat-number-ghost">8<sup>+</sup></div>
-				<p class="flat-stat-label">Years AI Optimization</p>
+			<div class="kpi-card">
+				<div class="kpi-header">
+					<span class="kpi-tag">AI-First</span>
+					<div class="kpi-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				</div>
+				<div class="kpi-value">8<sup>+</sup></div>
+				<div class="kpi-track"><div class="kpi-fill" style="--pct:80%"></div></div>
+				<p class="kpi-desc">Years AI Optimization</p>
 			</div>
 
-			<div class="flat-stat-item">
-				<div class="flat-number-ghost">174<sup>%</sup></div>
-				<p class="flat-stat-label">Average MQL Increase</p>
+			<div class="kpi-card">
+				<div class="kpi-header">
+					<span class="kpi-tag">Growth</span>
+					<div class="kpi-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				</div>
+				<div class="kpi-value">174<sup>%</sup></div>
+				<div class="kpi-track"><div class="kpi-fill" style="--pct:87%"></div></div>
+				<p class="kpi-desc">Average MQL Increase</p>
 			</div>
 
-			<div class="flat-stat-item">
-				<div class="flat-number-ghost">28<sup>%</sup></div>
-				<p class="flat-stat-label">Client Revenue Sourced</p>
+			<div class="kpi-card">
+				<div class="kpi-header">
+					<span class="kpi-tag">Revenue</span>
+					<div class="kpi-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				</div>
+				<div class="kpi-value">28<sup>%</sup></div>
+				<div class="kpi-track"><div class="kpi-fill" style="--pct:56%"></div></div>
+				<p class="kpi-desc">Client Revenue Sourced</p>
 			</div>
 
 		</div>
 	</section>
+	<script>
+	(function(){
+		var s=document.querySelector('.seo-kpi-strip');
+		if(!s)return;
+		var o=new IntersectionObserver(function(e){
+			if(e[0].isIntersecting){s.classList.add('kpi-in');o.disconnect();}
+		},{threshold:0.25});
+		o.observe(s);
+	})();
+	</script>
 
 
 	<section class="ai-seo-section">
