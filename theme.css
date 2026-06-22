@@ -1,12 +1,12 @@
 
 /* ══════════════════════════════════════════════════════════
-   THEME VARIABLES
+   THEME VARIABLES  —  Blue (official)
+   To retheme: edit only this :root block.
 ══════════════════════════════════════════════════════════ */
 :root {
   /* ── Brand ── */
-  --clr-primary: #e9b02d;
-  /* --clr-primary-dk:   #1d4ed8; */
-  --clr-primary-dk: #e4a617;
+  --clr-primary: #1877F2;
+  --clr-primary-dk: #0b67e0;
   --clr-primary-lt: #EEF2FF;
   --clr-primary-mid: #3D6BFF;
   --clr-accent: #7c3aed;
@@ -38,24 +38,34 @@
   --stat-card-border: rgba(80, 140, 255, 0.20);
   --stat-text-main: #eef2fb;
   --stat-text-soft: #aab4cc;
-  --stat-grad-from: #e2c27b;
-  --stat-grad-to: #c49426;
-  /* --stat-grad-from:   #7fb4ff;
-  --stat-grad-to:     #3a6cf0; */
-  --stat-tab-active: rgba(250, 255, 99, 0.11);
+  --stat-grad-from: #7fb4ff;
+  --stat-grad-to: #3a6cf0;
+  --stat-tab-active: rgba(99, 138, 255, 0.18);
 
   /* ── Buttons ── */
   --btn-primary-bg: transparent;
-  --btn-primary-clr: #000;
-  --btn-primary-border: #000;
-  /* --btn-primary-clr:    var(--clr-primary);
-  --btn-primary-border: var(--clr-primary); */
+  --btn-primary-clr: var(--clr-primary);
+  --btn-primary-border: var(--clr-primary);
   --btn-secondary-bg: var(--clr-primary);
-  /* --btn-secondary-clr:  #fff; */
-  --btn-secondary-clr: #000;
+  --btn-secondary-clr: #fff;
 
   /* ── Typography ── */
   --font: 'Inter', system-ui, sans-serif;
+
+  /* ── Font Sizes ── */
+  --fs-hero: clamp(3rem, 8vw, 5rem);
+  --fs-section-heading: clamp(2rem, 4vw, 3.5rem);
+  --fs-h2: clamp(2rem, 2.8vw, 3rem);
+  --fs-card-heading: 1.4rem;
+  --fs-sub-heading: 1.25rem;
+  --fs-body: 1rem;
+  --fs-body-lg: 1.05rem;
+  --fs-body-sm: 0.95rem;
+  --fs-label: 0.85rem;
+  --fs-badge: 0.8rem;
+  --fs-nav: 14.5px;
+  --fs-btn: 1rem;
+  --fs-section-sub: 17px;
 
   /* ── Spacing ── */
   --section-pad: 60px;
@@ -75,79 +85,79 @@
   --transition: 0.2s ease;
   --ease: cubic-bezier(.16, 1, .3, 1);
 
-  /* ── AI showcase yellow theme ── */
-  --ai-showcase-bg-from: #fffaf0;
-  --ai-showcase-bg-mid: #fff3d2;
-  --ai-showcase-bg-to: #fffdf6;
-  --ai-showcase-dot: rgba(233, 176, 45, 0.16);
-  --ai-showcase-glow: rgba(228, 166, 23, 0.18);
-  --ai-showcase-badge-bg: rgba(233, 176, 45, 0.12);
-  --ai-showcase-badge-border: rgba(228, 166, 23, 0.24);
-  --ai-showcase-badge-text: #9b6b09;
-  --ai-showcase-title-from: #c99015;
-  --ai-showcase-title-to: #f0c247;
+  /* ── AI showcase theme ── */
+  --ai-showcase-bg-from: #f0f5ff;
+  --ai-showcase-bg-mid: #e8f0fe;
+  --ai-showcase-bg-to: #eef3ff;
+  --ai-showcase-dot: rgba(24, 119, 242, 0.12);
+  --ai-showcase-glow: rgba(37, 99, 235, 0.15);
+  --ai-showcase-badge-bg: rgba(24, 119, 242, 0.10);
+  --ai-showcase-badge-border: rgba(24, 119, 242, 0.24);
+  --ai-showcase-badge-text: #1d4ed8;
+  --ai-showcase-title-from: #1877F2;
+  --ai-showcase-title-to: #60a5fa;
   --ai-showcase-panel-bg: rgba(255, 255, 255, 0.94);
-  --ai-showcase-panel-border: rgba(212, 181, 106, 0.34);
-  --ai-showcase-panel-shadow: 0 1px 3px rgba(0, 0, 0, .05), 0 12px 40px rgba(228, 166, 23, .12), 0 24px 60px rgba(77, 55, 14, .08);
-  --ai-showcase-panel-shadow-hover: 0 1px 3px rgba(0, 0, 0, .05), 0 20px 60px rgba(228, 166, 23, .16), 0 36px 80px rgba(77, 55, 14, .10);
-  --ai-showcase-topbar-bg: #fff8ea;
-  --ai-showcase-topbar-border: rgba(212, 181, 106, 0.30);
-  --ai-showcase-tool-text: #7c6840;
-  --ai-showcase-tool-hover: rgba(233, 176, 45, 0.10);
-  --ai-showcase-tool-active-border: rgba(212, 181, 106, 0.36);
-  --ai-showcase-keyword-bg: #fff6de;
-  --ai-showcase-keyword-border: #d9a126;
-  --ai-showcase-keyword-icon: #ba8617;
-  --ai-showcase-keyword-label: #856c3c;
-  --ai-showcase-keyword-text: #b57b0a;
-  --ai-showcase-keyword-badge-bg: #f7dfaa;
-  --ai-showcase-keyword-badge-text: #845300;
-  --ai-showcase-stat-highlight-bg: linear-gradient(180deg, #fff7e1 0%, #ffefc2 100%);
-  --ai-showcase-stat-highlight-border: rgba(212, 181, 106, 0.55);
-  --ai-showcase-stat-border: rgba(212, 181, 106, 0.34);
-  --ai-showcase-stat-icon: #c58b12;
-  --ai-showcase-stat-label: #76623b;
-  --ai-showcase-stat-value: #b87a08;
-  --ai-showcase-badge-up-bg: #eef8ef;
-  --ai-showcase-badge-up-text: #18734b;
-  --ai-showcase-badge-down-bg: #fde9e6;
-  --ai-showcase-badge-down-text: #c24a35;
-  --ai-showcase-slide-bg: #fffaf1;
-  --ai-showcase-slide-border: rgba(212, 181, 106, 0.20);
-  --ai-showcase-slider-btn-border: rgba(212, 181, 106, 0.30);
-  --ai-showcase-dot-idle: #ddc88c;
-  --ai-showcase-dot-active: #d59a19;
+  --ai-showcase-panel-border: rgba(99, 149, 235, 0.34);
+  --ai-showcase-panel-shadow: 0 1px 3px rgba(0, 0, 0, .05), 0 12px 40px rgba(24, 119, 242, .12), 0 24px 60px rgba(14, 34, 80, .08);
+  --ai-showcase-panel-shadow-hover: 0 1px 3px rgba(0, 0, 0, .05), 0 20px 60px rgba(24, 119, 242, .16), 0 36px 80px rgba(14, 34, 80, .10);
+  --ai-showcase-topbar-bg: #edf5ff;
+  --ai-showcase-topbar-border: rgba(99, 149, 235, 0.30);
+  --ai-showcase-tool-text: #3d6bcc;
+  --ai-showcase-tool-hover: rgba(24, 119, 242, 0.08);
+  --ai-showcase-tool-active-border: rgba(99, 149, 235, 0.36);
+  --ai-showcase-keyword-bg: #dbeafe;
+  --ai-showcase-keyword-border: #3b82f6;
+  --ai-showcase-keyword-icon: #1d4ed8;
+  --ai-showcase-keyword-label: #2563eb;
+  --ai-showcase-keyword-text: #1d4ed8;
+  --ai-showcase-keyword-badge-bg: #bfdbfe;
+  --ai-showcase-keyword-badge-text: #1e3a8a;
+  --ai-showcase-stat-highlight-bg: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 100%);
+  --ai-showcase-stat-highlight-border: rgba(99, 149, 235, 0.55);
+  --ai-showcase-stat-border: rgba(99, 149, 235, 0.34);
+  --ai-showcase-stat-icon: #1877F2;
+  --ai-showcase-stat-label: #2563eb;
+  --ai-showcase-stat-value: #1d4ed8;
+  --ai-showcase-badge-up-bg: #dcfce7;
+  --ai-showcase-badge-up-text: #16a34a;
+  --ai-showcase-badge-down-bg: #fee2e2;
+  --ai-showcase-badge-down-text: #dc2626;
+  --ai-showcase-slide-bg: #edf5ff;
+  --ai-showcase-slide-border: rgba(99, 149, 235, 0.20);
+  --ai-showcase-slider-btn-border: rgba(99, 149, 235, 0.30);
+  --ai-showcase-dot-idle: #bfdbfe;
+  --ai-showcase-dot-active: #1877F2;
 
-  /* ── Hero yellow scene theme ── */
-  --hero-bg-from: #fffdf7;
-  --hero-bg-mid: #fff5d7;
-  --hero-bg-to: #fff7e8;
-  --hero-grid-major: rgba(225, 193, 118, 0.26);
-  --hero-grid-minor: rgba(225, 193, 118, 0.11);
-  --hero-stage-bg: rgba(255, 252, 245, 0.62);
-  --hero-stage-border: rgba(214, 178, 95, 0.34);
-  --hero-stage-shadow: 0 30px 80px rgba(145, 109, 30, 0.10);
-  --hero-stage-glow-left: rgba(255, 208, 94, 0.28);
-  --hero-stage-glow-right: rgba(233, 176, 45, 0.18);
-  --hero-mesh-line: rgba(207, 161, 54, 0.22);
-  --hero-mesh-node: rgba(212, 160, 40, 0.50);
+  /* ── Hero scene theme ── */
+  --hero-bg-from: #f0f5ff;
+  --hero-bg-mid: #e8f0fe;
+  --hero-bg-to: #eef3ff;
+  --hero-grid-major: rgba(120, 120, 120, 0.18);
+  --hero-grid-minor: rgba(120, 120, 120, 0.08);
+  --hero-stage-bg: rgba(240, 245, 255, 0.62);
+  --hero-stage-border: rgba(90, 130, 220, 0.34);
+  --hero-stage-shadow: 0 30px 80px rgba(30, 64, 175, 0.10);
+  --hero-stage-glow-left: rgba(99, 149, 235, 0.28);
+  --hero-stage-glow-right: rgba(37, 99, 235, 0.18);
+  --hero-mesh-line: rgba(59, 130, 246, 0.22);
+  --hero-mesh-node: rgba(37, 99, 235, 0.50);
   --hero-badge-bg: rgba(255, 255, 255, 0.78);
-  --hero-badge-border: rgba(217, 185, 111, 0.34);
-  --hero-badge-text: #a76f07;
-  --hero-title-accent-from: #c6880d;
-  --hero-title-accent-to: #f1c24e;
+  --hero-badge-border: rgba(99, 149, 235, 0.34);
+  --hero-badge-text: #1d4ed8;
+  --hero-title-accent-from: #1877F2;
+  --hero-title-accent-to: #60a5fa;
   --hero-subtext: #5f6368;
   --hero-node-bg: rgba(255, 255, 255, 0.88);
-  --hero-node-border: rgba(221, 190, 123, 0.52);
-  --hero-node-text: #4f4f4f;
-  --hero-node-shadow: 0 20px 34px rgba(106, 78, 20, 0.10);
-  --hero-chip-bg: rgba(255, 248, 226, 0.88);
-  --hero-chip-border: rgba(217, 185, 111, 0.36);
-  --hero-chip-text: #8b6a23;
+  --hero-node-border: rgba(53, 56, 60, 0.22);
+  --hero-node-text: #32353b;
+  --hero-node-shadow: 0 20px 34px rgba(85, 90, 98, 0.14);
+  --hero-chip-bg: rgba(239, 246, 255, 0.88);
+  --hero-chip-border: rgba(99, 149, 235, 0.36);
+  --hero-chip-text: #1d4ed8;
   --hero-hint: #8e8a7f;
-  --hero-tag-bg: rgba(255, 251, 239, 0.8);
-  --hero-tag-border: rgba(213, 178, 94, 0.44);
-  --hero-tag-text: #8f6a17;
+  --hero-tag-bg: rgba(239, 246, 255, 0.8);
+  --hero-tag-border: rgba(99, 149, 235, 0.44);
+  --hero-tag-text: #1d4ed8;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -316,7 +326,7 @@ a:hover {
 .h-main,
 h2.h-main {
   font-family: var(--font);
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: var(--fs-section-heading);
   font-weight: 900;
   background-clip: text;
   line-height: 1.15;
@@ -332,7 +342,7 @@ h2.h-main em {
 }
 
 .section-sub {
-  font-size: 17px;
+  font-size: var(--fs-section-sub);
   color: var(--clr-ink-2);
   line-height: 1.75;
   max-width: 760px;
@@ -439,7 +449,7 @@ h2.h-main em {
 }
 
 .nav-wrap {
-  max-width: 1100px;
+  max-width: 1220px;
   margin: 10px auto;
   border-radius: var(--r);
   padding: 6px 36px;
@@ -903,7 +913,7 @@ h2.h-main em {
 }
 
 .cta-banner-left h2 {
-  font-size: clamp(2rem, 2.8vw, 3rem);
+  font-size: var(--fs-h2);
   font-weight: 600;
   color: #fff;
   line-height: 1.1;
@@ -1092,7 +1102,7 @@ h2.h-main em {
 
 .wbn-hero-content h1 {
   font-family: var(--font);
-  font-size: 5rem;
+  font-size: var(--fs-hero);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 28px;
@@ -1251,9 +1261,9 @@ h2.h-main em {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 24%, rgba(255, 226, 127, 0.42), transparent 24%),
-    radial-gradient(circle at 22% 68%, rgba(255, 212, 90, 0.20), transparent 20%),
-    radial-gradient(circle at 84% 36%, rgba(239, 184, 51, 0.18), transparent 22%);
+    radial-gradient(circle at 50% 24%, rgba(99, 149, 235, 0.28), transparent 24%),
+    radial-gradient(circle at 22% 68%, rgba(59, 130, 246, 0.14), transparent 20%),
+    radial-gradient(circle at 84% 36%, rgba(37, 99, 235, 0.12), transparent 22%);
   pointer-events: none;
 }
 
@@ -1345,7 +1355,7 @@ h2.h-main em {
   margin-bottom: 20px;
   animation: fadeUp .5s ease both;
   text-align: center;
-  box-shadow: 0 12px 22px rgba(127, 92, 21, 0.08);
+  box-shadow: 0 12px 22px rgba(30, 64, 175, 0.08);
 }
 
 .hero h1 {
@@ -1401,8 +1411,8 @@ h2.h-main em {
 }
 
 .hero .btn-secondary {
-  background: linear-gradient(135deg, #ffd46a 0%, var(--clr-primary) 100%);
-  border-color: rgba(217, 163, 28, 0.9);
+  background: linear-gradient(135deg, #60a5fa 0%, var(--clr-primary) 100%);
+  border-color: rgba(24, 119, 242, 0.9);
 }
 
 .hero .btn-primary:hover,
@@ -1449,7 +1459,7 @@ h2.h-main em {
   color: var(--hero-chip-text);
   font-size: 14px;
   font-weight: 600;
-  box-shadow: 0 10px 20px rgba(127, 92, 21, 0.06);
+  box-shadow: 0 10px 20px rgba(30, 64, 175, 0.06);
 }
 
 .hero-platform {
@@ -1477,15 +1487,15 @@ h2.h-main em {
 
 .hero-platform:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 26px 42px rgba(106, 78, 20, 0.14);
-  border-color: rgba(208, 162, 53, 0.7);
+  box-shadow: 0 26px 42px rgba(30, 64, 175, 0.14);
+  border-color: rgba(99, 149, 235, 0.7);
 }
 
 .hero-platform.is-dragging {
   animation: none;
   cursor: grabbing;
   transform: scale(1.03);
-  box-shadow: 0 30px 48px rgba(106, 78, 20, 0.18);
+  box-shadow: 0 30px 48px rgba(30, 64, 175, 0.18);
 }
 
 .hero-platform span {
@@ -1503,7 +1513,7 @@ h2.h-main em {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.85);
-  box-shadow: inset 0 0 0 1px rgba(227, 199, 141, 0.24);
+  box-shadow: inset 0 0 0 1px rgba(99, 149, 235, 0.24);
 }
 
 .hero-platform-icon img {
@@ -1565,8 +1575,8 @@ h2.h-main em {
 }
 
 .hero-tag:hover {
-  background: rgba(255, 243, 199, 0.94);
-  border-color: rgba(213, 170, 74, 0.72);
+  background: rgba(239, 246, 255, 0.94);
+  border-color: rgba(99, 149, 235, 0.72);
   transform: translateY(-2px);
 }
 
