@@ -1,4 +1,3 @@
-
 /* ══════════════════════════════════════════════════════════
    THEME VARIABLES  —  Blue (official)
    To retheme: edit only this :root block.
@@ -132,7 +131,7 @@
   --hero-bg-from: #f0f5ff;
   --hero-bg-mid: #e8f0fe;
   --hero-bg-to: #eef3ff;
-  --hero-grid-major: rgba(120, 120, 120, 0.18);
+  --hero-grid-major: rgba(120, 120, 120, 0.086);
   --hero-grid-minor: rgba(120, 120, 120, 0.08);
   --hero-stage-bg: rgba(240, 245, 255, 0.62);
   --hero-stage-border: rgba(90, 130, 220, 0.34);
@@ -1686,6 +1685,8 @@ h2.h-main em {
   .hero-logo-sec img {
     width: 130px;
   }
+
+
 
   .hero-logo-sec {
     justify-content: center;

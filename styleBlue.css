@@ -804,7 +804,7 @@ h2.h-main em {
 
 .wbn-hero-zone-blue {
   position: relative;
-  padding: 120px 0 80px;
+  padding: 120px 0 40px;
   overflow: hidden;
 }
 
@@ -857,7 +857,7 @@ h2.h-main em {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  background: white;
+  /* background: white; */
   padding: 7px 18px 7px 11px;
   font-size: 14px;
   font-weight: 600;
@@ -897,7 +897,7 @@ h2.h-main em {
   animation: fadeUp .55s .16s ease both;
   text-align: center;
 
-  background: white;
+  /* background: white; */
 }
 
 .hero-cta-wrap {
@@ -962,12 +962,21 @@ h2.h-main em {
 @media (max-width: 640px) {
 
   .wbn-hero-content-blue h1 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     line-height: 1.1;
   }
 
   .wbn-hero-zone-blue {
-    padding: 60px 0 56px;
+    padding: 80px 0 20px;
+  }
+
+  .hero-logo-sec img {
+    width: 130px;
+  }
+
+
+  .hero-logo-sec {
+    gap: 20px;
   }
 
   .hero h1 {
@@ -4269,6 +4278,15 @@ section#wb-client-strip p.section-sub {
     position: relative;
     padding: 28px 20px;
   }
+
+  
+.why-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+}
+
 }
 
 /* ══════════════════════════════════════════════════════════
