@@ -1,0 +1,2057 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Development</title>
+
+	<link rel='stylesheet' href='./theme.css'>
+	<link rel='stylesheet' href='./devStyle.css'>
+
+	<link
+		href='https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
+		rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+
+<body>
+
+
+
+	<!-- NAVBAR -->
+	<nav class="navbar" id="navbar">
+		<div class="nav-wrap">
+
+			<a href="/" class="nav-logo">
+				<img src="https://whitebunnie.com/wp-content/uploads/2026/04/LOGO-Black-scaled-1.webp"
+					alt="White Bunnie Digital Marketing">
+			</a>
+
+			<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+				<span></span><span></span><span></span>
+			</button>
+
+			<ul class="nav-menu" id="navMenu">
+
+				<!-- Services - Mega Menu -->
+				<li class="nav-item has-mega">
+					<a href="#services" class="nav-link">
+						Services
+						<svg class="nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="6 9 12 15 18 9" />
+						</svg>
+					</a>
+
+					<div class="mega-menu">
+						<div class="mega-inner">
+
+							<div class="mega-col">
+								<p class="mega-col-header">SEO & Visibility</p>
+								<a href="#" class="mega-item">
+
+									<div class="mega-item-text"><strong>AI SEO</strong><span>AI-powered search
+											visibility</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-gears"></i></div>
+									<div class="mega-item-text"><strong>Technical SEO</strong><span>Site health &amp;
+											crawlability</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+									<div class="mega-item-text"><strong>Local SEO</strong><span>Dominate local
+											searches</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+									<div class="mega-item-text"><strong>E-commerce SEO</strong><span>Organic growth for
+											online stores</span></div>
+								</a>
+							</div>
+
+							<div class="mega-col">
+								<p class="mega-col-header">Paid Advertising</p>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-brands fa-google"></i></div>
+									<div class="mega-item-text"><strong>Google Ads / PPC</strong><span>Targeted paid
+											search campaigns</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-brands fa-meta"></i></div>
+									<div class="mega-item-text"><strong>Meta Ads</strong><span>Facebook &amp; Instagram
+											advertising</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-chart-line"></i></div>
+									<div class="mega-item-text"><strong>Performance Marketing</strong><span>SEM, social
+											ads &amp; email ROI</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-filter"></i></div>
+									<div class="mega-item-text"><strong>Lead Generation</strong><span>Quality leads
+											&amp; conversion</span></div>
+								</a>
+							</div>
+
+							<div class="mega-col">
+								<p class="mega-col-header">Brand &amp; Social</p>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-hashtag"></i></div>
+									<div class="mega-item-text"><strong>Social Media Marketing</strong><span>Build &amp;
+											engage your audience</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-pen-nib"></i></div>
+									<div class="mega-item-text"><strong>Content Marketing</strong><span>Blogs,
+											videos</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-palette"></i></div>
+									<div class="mega-item-text"><strong>Branding &amp; Identity</strong><span>Logo,
+											brand strategy &amp; design</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-envelope"></i></div>
+									<div class="mega-item-text"><strong>Email Marketing</strong><span>Nurture leads
+											&amp; drive conversions</span></div>
+								</a>
+							</div>
+
+							<div class="mega-col">
+								<p class="mega-col-header">Tech &amp; Design</p>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-code"></i></div>
+									<div class="mega-item-text"><strong>Web Development</strong><span>Custom &amp;
+											e-commerce websites</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+									<div class="mega-item-text"><strong>UI/UX Design</strong><span>Wireframes,
+											prototypes</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-laptop"></i></div>
+									<div class="mega-item-text"><strong>Landing Pages</strong><span>High-converting page
+											experiences</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+									<div class="mega-item-text"><strong>CRO</strong><span>Conversion rate
+											optimization</span></div>
+								</a>
+							</div>
+
+						</div>
+
+						<div class="mega-cta-strip">
+							<div class="mega-cta-text">
+								<strong>Let's Talk About Your Goals</strong>
+								<p>Reach out your way. We start by listening so we can build what truly works for you.
+								</p>
+							</div>
+							<a href="#contact" class="mega-cta-btn">Get in Touch</a>
+						</div>
+					</div>
+				</li>
+
+				<!-- Industries dropdown -->
+				<li class="nav-item has-dropdown">
+					<a href="#" class="nav-link">
+						Industries
+						<svg class="nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="6 9 12 15 18 9" />
+						</svg>
+					</a>
+					<ul class="nav-dropdown">
+						<li><a href="#"><i class="fa-solid fa-heart-pulse"></i> Healthcare</a></li>
+						<li><a href="#"><i class="fa-solid fa-building"></i> Real Estate</a></li>
+						<li><a href="#"><i class="fa-solid fa-bag-shopping"></i> E-commerce</a></li>
+						<li><a href="#"><i class="fa-solid fa-microchip"></i> SaaS &amp; Tech</a></li>
+						<li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+						<li><a href="#"><i class="fa-solid fa-coins"></i> Finance</a></li>
+					</ul>
+				</li>
+
+				<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+
+			</ul>
+
+			<div class="nav-actions">
+				<a href="tel:+919876543210" class="btn btn-secondary btn-sm">
+					<i class="fa-solid fa-phone"></i> Call Us
+				</a>
+			</div>
+
+		</div>
+	</nav>
+
+
+
+	<section class="wbn-hero-zone wbn-hero-zone-two" id="heroContainer">
+
+		<div class="wrap">
+			<div class="wbn-hero-content">
+
+				<div class="wbn-hero-chip">
+					<em>Get Yourself a Website that Converts Leads</em>
+				</div>
+
+				<h1>
+					Professional <em>Web Development</em> Services
+				</h1>
+
+				<p class="wbn-hero-description">
+					Bring your digital vision to life with custom web development services designed to help your
+					business thrive. We build fast, secure, and scalable websites and web applications that deliver
+					seamless user experiences, strengthen your online presence, and support long-term business growth.
+				</p>
+
+				<div class="wbn-action-area">
+
+
+					<div class="wbn-hero-buttons">
+						<a href="#contact" class="btn btn-primary">
+							Talk to an Expert
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+								stroke-linecap="round" stroke-linejoin="round">
+								<line x1="5" y1="12" x2="19" y2="12" />
+								<polyline points="12,5 19,12 12,19" />
+							</svg>
+						</a>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+
+	<section class="seo-kpi-strip" data-nav-theme="dark">
+		<div class="kpi-wrap">
+
+			<div class="kpi-card">
+				<!-- <div class="kpi-header">
+					<span class="kpi-tag">Experience</span>
+					<div class="kpi-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				</div> -->
+				<div class="kpi-value">35<sup>+</sup></div>
+				<div class="kpi-track">
+					<div class="kpi-fill" style="--pct:70%"></div>
+				</div>
+				<p class="kpi-desc">Years Team Expertise</p>
+			</div>
+
+			<div class="kpi-card">
+				<!-- <div class="kpi-header">
+					<span class="kpi-tag">AI-First</span>
+					<div class="kpi-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				</div> -->
+				<div class="kpi-value">1000<sup>+</sup></div>
+				<div class="kpi-track">
+					<div class="kpi-fill" style="--pct:80%"></div>
+				</div>
+				<p class="kpi-desc">Web/App Developed</p>
+			</div>
+
+			<div class="kpi-card">
+				<!-- <div class="kpi-header">
+					<span class="kpi-tag">Growth</span>
+					<div class="kpi-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				</div> -->
+				<div class="kpi-value">120<sup>+</sup></div>
+				<div class="kpi-track">
+					<div class="kpi-fill" style="--pct:87%"></div>
+				</div>
+				<p class="kpi-desc">5 Star Reviews</p>
+			</div>
+
+			<div class="kpi-card">
+				<!-- <div class="kpi-header">
+					<span class="kpi-tag">Revenue</span>
+					<div class="kpi-signal" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+				</div> -->
+				<div class="kpi-value">98<sup>K</sup></div>
+				<div class="kpi-track">
+					<div class="kpi-fill" style="--pct:56%"></div>
+				</div>
+				<p class="kpi-desc">Keywords Ranked</p>
+			</div>
+
+		</div>
+	</section>
+	<script>
+		(function () {
+			var s = document.querySelector('.seo-kpi-strip');
+			if (!s) return;
+			var o = new IntersectionObserver(function (e) {
+				if (e[0].isIntersecting) { s.classList.add('kpi-in'); o.disconnect(); }
+			}, { threshold: 0.25 });
+			o.observe(s);
+		})();
+	</script>
+
+
+
+
+
+	<section class="sd-section">
+
+		<div class="sd-header">
+			<h2 class="sd-title">
+				Custom Software, <span class="sd-accent-text">Engineered to Scale</span>
+			</h2>
+			<p class="sd-description">
+				From proof-of-concept to production, our in-house engineers design and build reliable software
+				that fits how your business actually works - not the other way around. We handle architecture,
+				development, and DevOps under one roof, so nothing gets lost in translation.
+			</p>
+		</div>
+
+		<div class="sd-container">
+
+			<div class="sd-content">
+
+				<ul class="sd-list">
+					<li>
+						<span class="sd-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"
+								stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="20 6 9 17 4 12" />
+							</svg></span>
+						<p>
+							Full-stack engineering across <strong>Node.js, Python, React, .NET, and Java</strong>, with
+							cloud-native architecture on AWS, Azure, and GCP built for real production load.
+						</p>
+					</li>
+					<li>
+						<span class="sd-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"
+								stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="20 6 9 17 4 12" />
+							</svg></span>
+						<p>
+							One team from discovery through deployment - architecture, agile development, QA, CI/CD, and
+							ongoing support, so you're never handed off between vendors mid-project.
+						</p>
+					</li>
+					<li>
+						<span class="sd-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"
+								stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="20 6 9 17 4 12" />
+							</svg></span>
+						<p>
+							Software built to hold up under real usage - <strong>tested, monitored, and secured</strong>
+							-
+							trusted by teams shipping products that can't afford downtime.
+						</p>
+					</li>
+				</ul>
+
+				<div class="sd-footer">
+					<div class="sd-stat">
+						<span class="sd-stat-num">120+</span>
+						<span class="sd-stat-label">Products shipped</span>
+					</div>
+					<div class="sd-stat">
+						<span class="sd-stat-num">99.9%</span>
+						<span class="sd-stat-label">Uptime SLA</span>
+					</div>
+					<div class="sd-stat">
+						<span class="sd-stat-num">15+</span>
+						<span class="sd-stat-label">Years in production</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="sd-visual">
+				<div class="sd-glow"></div>
+
+				<div class="sd-chip c1"><span class="sd-chip-dot" style="background:#61DAFB"></span>React</div>
+				<div class="sd-chip c2"><span class="sd-chip-dot" style="background:#68A063"></span>Node.js</div>
+				<div class="sd-chip c3"><span class="sd-chip-dot" style="background:#F89820"></span>AWS</div>
+
+				<div class="sd-window">
+					<div class="sd-window-bar">
+						<span class="sd-dot r"></span><span class="sd-dot y"></span><span class="sd-dot g"></span>
+						<span class="sd-window-tab">deploy.config.ts</span>
+					</div>
+					<div class="sd-code">
+						<span class="cm">// production deploy pipeline</span>
+						<span class="kw">export async function</span> <span class="fn">deployService</span>(<span
+							class="prop">env</span>: <span class="type">Environment</span>) {
+						<span class="kw">await</span> <span class="fn">build</span>({ <span class="prop">target</span>:
+						<span class="str">'production'</span> });
+						<span class="kw">await</span> <span class="fn">runTests</span>({ <span
+							class="prop">suite</span>: <span class="str">'full'</span> });
+						<span class="kw">return</span> <span class="fn">deploy</span>(env, {
+						<span class="prop">strategy</span>: <span class="str">'blue-green'</span>
+						});<span class="sd-cursor"></span>
+						}
+					</div>
+					<div class="sd-window-status"><span class="status-dot sd-status-dot"></span>build passed · deployed
+						to production</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+
+	<section class="cta10-section">
+		<div class="cta10-wrap">
+
+			<h2 class="cta10-title">Looking for reliable web development services?</h2>
+
+			<p class="cta10-subtext">
+				Partner with a team that builds fast, scalable, and conversion-focused websites tailored to
+				your business goals.
+			</p>
+
+			<p class="cta10-desc">
+				Client-focused and customer-centric we design and develop websites that deliver real business
+				results, from strategy through launch.
+			</p>
+
+			<button class="cta10-btn" type="button">
+				Let's Talk
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+					stroke-linejoin="round">
+					<line x1="5" y1="12" x2="19" y2="12" />
+					<polyline points="12 5 19 12 12 19" />
+				</svg>
+			</button>
+
+		</div>
+	</section>
+
+
+
+
+	<section class="success-stories-section">
+		<div class="success-container">
+
+			<div class="success-header">
+				<!-- <span class="success-badge">Case Studies</span> -->
+				<h2 class="success-main-title">Real Results from India's Top <span class="gold-gradient-text">Web
+						Development Agency</span></h2>
+				<p class="success-tagline">Websites Built to Convert, Scale, and Perform</p>
+				<p class="success-subtitle">Discover how our web development services transformed businesses across
+					India. From startups to enterprises, see the measurable impact of our custom-built websites on user
+					engagement, conversions, and revenue growth.</p>
+			</div>
+
+			<div class="success-matrix-grid">
+
+				<div class="success-panel-card">
+					<div class="panel-image-frame">
+
+						<video autoplay muted loop playsinline>
+							<source src="./video/saass.mp4" type="video/mp4">
+							Your browser does not support the HTML video tag.
+						</video>
+
+					</div>
+					<div class="panel-category-tag">B2B & SaaS</div>
+					<div class="panel-metrics-row">
+						<div class="metric-data-block">
+							<span class="metric-percentage">+180%</span>
+							<span class="metric-label">Conversion Rate</span>
+						</div>
+						<div class="metric-divider"></div>
+						<div class="metric-data-block">
+							<span class="metric-percentage">+65%</span>
+							<span class="metric-label">Faster Load Time</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="success-panel-card">
+					<div class="panel-image-frame">
+						<!-- <img src="https://www.weareyuma.com/sites/default/files/styles/22_8_xl/public/imgs/stills_53297_luke-stackpoole-d772c704.webp?h=573fb875&itok=zBEmf1h5"
+							alt="Global Monuments Architectural Scene" class="panel-media"> -->
+
+						<video autoplay muted loop playsinline>
+							<source src="./video/travell.mp4" type="video/mp4">
+							Your browser does not support the HTML video tag.
+						</video>
+
+					</div>
+					<div class="panel-category-tag">Travel Agency</div>
+					<div class="panel-metrics-row">
+						<div class="metric-data-block">
+							<span class="metric-percentage">+210%</span>
+							<span class="metric-label">Online Bookings</span>
+						</div>
+						<div class="metric-divider"></div>
+						<div class="metric-data-block">
+							<span class="metric-percentage">+58%</span>
+							<span class="metric-label">Avg. Session Duration</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="success-panel-card">
+					<div class="panel-image-frame">
+						<!-- <img src="https://www.weareyuma.com/sites/default/files/styles/22_8_xl/public/imgs/stills_53297_luke-stackpoole-d772c704.webp?h=573fb875&itok=zBEmf1h5"
+							alt="Financial Verification Document and Miniature House" class="panel-media"> -->
+
+
+						<video autoplay muted loop playsinline>
+							<source src="./video/mortgage.mp4" type="video/mp4">
+							Your browser does not support the HTML video tag.
+						</video>
+
+					</div>
+					<div class="panel-category-tag">Mortgage Company</div>
+					<div class="panel-metrics-row">
+						<div class="metric-data-block">
+							<span class="metric-percentage">+320%</span>
+							<span class="metric-label">Form Submissions</span>
+						</div>
+						<div class="metric-divider"></div>
+						<div class="metric-data-block">
+							<span class="metric-percentage">+99%</span>
+							<span class="metric-label">Uptime Achieved</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="success-footer-summary">
+				<p>At White Bunnie, we don't just build websites we build platforms that grow with your business. Our
+					in-house developers combine modern frameworks, scalable architecture, and thoughtful UX to make sure
+					every site we ship performs under real-world traffic. Ready to write your own success story? Let's
+					discuss how our web development expertise can transform your online presence.</p>
+			</div>
+
+		</div>
+	</section>
+
+
+	<!-- <section class="metrics-benchmarks-section">
+		<div class="metrics-container">
+
+			<div class="metrics-header">
+				<h2 class="metrics-main-title">Next-Gen SEO Metrics:- <span class="gradient-accent">AI SEO</span></h2>
+				<p class="metrics-subtitle">Essential performance indicators and success metrics for the four pillars of
+					AI-powered search optimization.</p>
+			</div>
+
+			<div class="metrics-dashboard-grid">
+
+				<div class="metric-visual-card">
+					<div class="progress-ring-wrapper">
+						<div class="progress-ring-circle ring-68">
+							<div class="ring-inner-content">
+								<span class="percentage-value">68.7%</span>
+							</div>
+						</div>
+					</div>
+					<div class="metric-text-content">
+						<h4 class="metric-label">Top 3 Capture</h4>
+						<p class="metric-description">The top 3 organic results capture <strong>68.7%</strong> of all
+							clicks-winning positions still win traffic.</p>
+					</div>
+				</div>
+
+				<div class="metric-visual-card">
+					<div class="progress-ring-wrapper">
+						<div class="progress-ring-circle ring-39">
+							<div class="ring-inner-content">
+								<span class="percentage-value">39.8%</span>
+							</div>
+						</div>
+					</div>
+					<div class="metric-text-content">
+						<h4 class="metric-label">#1 Organic CTR</h4>
+						<p class="metric-description">The #1 organic listing earns a <strong>39.8% CTR</strong> on
+							average (AI overview/snippet support keeps CTR high).</p>
+					</div>
+				</div>
+
+				<div class="metric-visual-card">
+					<div class="progress-ring-wrapper">
+						<div class="progress-ring-circle ring-31">
+							<div class="ring-inner-content">
+								<span class="percentage-value">31%</span>
+							</div>
+						</div>
+					</div>
+					<div class="metric-text-content">
+						<h4 class="metric-label">AI Overviews Presence</h4>
+						<p class="metric-description">Google shows AI Overviews (SGE) on <strong>~31%</strong> of result
+							pages, being citation-worthy via AEO/GEO is critical.</p>
+					</div>
+				</div>
+
+				<div class="metric-visual-card">
+					<div class="progress-ring-wrapper">
+						<div class="progress-ring-circle ring-58">
+							<div class="ring-inner-content">
+								<span class="percentage-value">58.5%</span>
+							</div>
+						</div>
+					</div>
+					<div class="metric-text-content">
+						<h4 class="metric-label">Zero-Click Threshold</h4>
+						<p class="metric-description">About <strong>58.5%</strong> of Google searches end with zero
+							clicks-answer-ready content is how you're still discovered.</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section> -->
+
+
+
+
+
+	<section class="advanced-cyber-cta" data-nav-theme="dark">
+		<div class="cyber-grid-overlay"></div>
+
+		<div class="cyber-container">
+
+			<div class="hud-frame-element top-left"></div>
+			<div class="hud-frame-element top-right"></div>
+			<div class="hud-frame-element bottom-left"></div>
+			<div class="hud-frame-element bottom-right"></div>
+
+			<div class="cyber-content-layout">
+
+				<div class="cyber-header-block">
+					<div class="scanner-line"></div>
+					<h2 class="cyber-title">Best AI SEO Company in India to Get You Discovered Everywhere</h2>
+				</div>
+
+				<div class="cyber-data-deck">
+					<div class="deck-border-line"></div>
+					<p class="cyber-body-text">
+						Harness the potential of artificial intelligence, automation and optimization to boost your
+						website’s ranking. Our cutting-edge AI SEO solutions deliver measurable results, enhanced
+						accuracy and faster performance. Elevate your brand visibility in India’s competitive market
+						with our expert team.
+					</p>
+				</div>
+
+				<div class="hologram-terminal-zone">
+					<div class="orbital-ring ring-outer"></div>
+					<div class="orbital-ring ring-mid"></div>
+					<div class="orbital-ring ring-inner"></div>
+
+
+
+					<a href="#" class="cyber-core-node-btn">
+						<div class="node-glow-effect"></div>
+						<div class="node-inner-circle">
+							<span class="node-text-primary">LET'S</span>
+							<span class="node-text-secondary">TALK</span>
+						</div>
+					</a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<section class="rtc-section">
+		<div class="rtc-wrap">
+
+			<div class="rtc-head">
+				<h2>Reasons to choose <em>the best</em> web development agency</h2>
+				<p>White Bunnie offers you a range of benefits you would not find anywhere else.</p>
+			</div>
+
+			<div class="rtc-grid">
+				<div class="module" data-code="PERF">
+					<span class="corner tl"></span><span class="corner br"></span>
+					<div class="module-top">
+						<span class="module-code">PERF</span>
+						<span class="status-dot"></span>
+					</div>
+					<h3>High Performance</h3>
+					<p>The time it takes for a page to load is an important factor in a website's overall performance.
+						White Bunnie reduces HTTP requests, minifies assets, uses a cookie-free domain, and relies on
+						SSD hosting to keep your speed sharp.</p>
+				</div>
+
+				<div class="module" data-code="SCALE">
+					<span class="corner tl"></span><span class="corner br"></span>
+					<div class="module-top">
+						<span class="module-code">SCALE</span>
+						<span class="status-dot"></span>
+					</div>
+					<h3>Scalability</h3>
+					<p>Customized website development gives you the option of choosing the technologies your website is
+						built on - helping you scale your business and update your site to meet future needs.</p>
+				</div>
+
+				<div class="module" data-code="SEC">
+					<span class="corner tl"></span><span class="corner br"></span>
+					<div class="module-top">
+						<span class="module-code">SEC</span>
+						<span class="status-dot"></span>
+					</div>
+					<h3>Security</h3>
+					<p>Unprotected websites put you and your customers at risk. With White Bunnie, you can ensure your
+						company has a highly secure website that gives your customers a real sense of safety.</p>
+				</div>
+
+				<div class="module" data-code="CUSTOM">
+					<span class="corner tl"></span><span class="corner br"></span>
+					<div class="module-top">
+						<span class="module-code">CUSTOM</span>
+						<span class="status-dot"></span>
+					</div>
+					<h3>Customized Package</h3>
+					<p>We provide custom website development services so you only pay for the functionality you actually
+						need - letting you stick to budget while receiving optimal results.</p>
+				</div>
+
+				<div class="module" data-code="AGILE">
+					<span class="corner tl"></span><span class="corner br"></span>
+					<div class="module-top">
+						<span class="module-code">AGILE</span>
+						<span class="status-dot"></span>
+					</div>
+					<h3>Agile Approach</h3>
+					<p>We use an agile approach for project development, running frequent sanity checks to make sure
+						we're never spending time on things that don't add value to your project.</p>
+				</div>
+
+				<div class="module" data-code="CMS">
+					<span class="corner tl"></span><span class="corner br"></span>
+					<div class="module-top">
+						<span class="module-code">CMS</span>
+						<span class="status-dot"></span>
+					</div>
+					<h3>Content Management</h3>
+					<p>Our custom web apps include simple site management tools so non-technical team members can make
+						changes without needing developer support - backed by results-driven content marketing.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	<section class="services-matrix-section">
+		<div class="services-mesh-bg"></div>
+
+		<div class="services-container">
+
+			<div class="services-header-block">
+				<h2 class="services-title">Web Development Services Offered By White Bunnie</h2>
+				<p class="services-tagline">Where strategy, design, and development come together.</p>
+			</div>
+
+
+			<div class="services-card-grid">
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">Web Design & Development</h3>
+						<p class="card-sub-italic">Custom Websites Built for Business Growth</p>
+						<p class="card-description">We create responsive, high-performing websites with custom front-end
+							and back-end development. Every project is designed to strengthen your brand, improve user
+							experience, and deliver measurable business results.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">Responsive Website Design</h3>
+						<p class="card-sub-italic">Optimized for Every Screen Size</p>
+						<p class="card-description">Our responsive websites adapt seamlessly across desktops, tablets,
+							and smartphones, delivering a smooth browsing experience that keeps visitors engaged while
+							improving accessibility and search engine performance.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">Progressive Web Apps</h3>
+						<p class="card-sub-italic">App-Like Experiences on the Web</p>
+						<p class="card-description">We build Progressive Web Apps that combine the speed of websites
+							with the functionality of mobile apps, delivering fast, reliable, and engaging experiences
+							across every device.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">E-Commerce Development</h3>
+						<p class="card-sub-italic">Online Stores Built to Maximize Sales</p>
+						<p class="card-description">We build secure, scalable e-commerce websites with seamless
+							checkout, payment gateway integration, inventory management, and mobile-first design to help
+							you deliver exceptional shopping experiences and increase online revenue.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">Third-Party Integration</h3>
+						<p class="card-sub-italic">Connect Your Business Tools Seamlessly</p>
+						<p class="card-description">Integrate CRMs, payment gateways, APIs, ERP systems, and other
+							third-party platforms to streamline workflows, improve productivity, and create a unified
+							digital ecosystem for your business.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">Custom Software Development</h3>
+						<p class="card-sub-italic">Tailored Solutions for Your Business</p>
+						<p class="card-description">Our custom software solutions automate workflows, improve
+							operational efficiency, and solve unique business challenges with scalable applications
+							built specifically for your organization's needs.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">QA & Testing</h3>
+						<p class="card-sub-italic">Reliable Performance, Every Time</p>
+						<p class="card-description">Our quality assurance and testing process identifies issues before
+							launch, ensuring your website or application performs flawlessly with maximum reliability,
+							security, speed, and user satisfaction.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">Support & Maintenance</h3>
+						<p class="card-sub-italic">Keeping Your Website Running Smoothly</p>
+						<p class="card-description">We provide ongoing website maintenance, security updates,
+							performance optimization, and technical support to ensure your website remains secure, fast,
+							reliable, and always up to date.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+				<div class="service-premium-card">
+					<div class="card-top-accent"></div>
+					<div class="card-body">
+						<h3 class="card-heading">Consulting & Business Analysis</h3>
+						<p class="card-sub-italic">Strategic Planning for Digital Success</p>
+						<p class="card-description">We analyze your business objectives, identify opportunities, and
+							recommend the right technology solutions to build scalable digital products that support
+							sustainable business growth and long-term success.</p>
+					</div>
+					<div class="card-footer-action">
+						<a href="#" class="btn-service-transition">Read More</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+
+	<section class="results-showcase-section">
+		<div class="results-container">
+
+			<div class="results-header-zone">
+				<h2 class="results-main-title">Your Trusted Web Development Company</h2>
+				<p class="results-sub-tagline">Get your own customized website with White Bunnie, your trusted web
+					development company in India. Our certified professionals customize your website so that you draw
+					more visitors and turn them into customers.</p>
+			</div>
+
+			<div class="results-action-cluster">
+				<a href="#" class="btn-primary-yellow">Talk to an Expert</a>
+				<a href="#" class="btn-secondary-outline">
+					<span>case studies</span>
+					<svg class="arrow-diagonal" width="14" height="14" viewBox="0 0 24 24" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</a>
+			</div>
+
+			<div class="results-stats-deck">
+
+				<div class="stat-minimal-card">
+					<div class="stat-massive-number">500<sup>+</sup></div>
+					<p class="stat-minimal-label">Websites Delivered</p>
+				</div>
+
+				<div class="stat-minimal-card">
+					<div class="stat-massive-number">12+</div>
+					<p class="stat-minimal-label">Years of Development Experience</p>
+				</div>
+
+				<div class="stat-minimal-card">
+					<div class="stat-massive-number">98%<sup>+</sup></div>
+					<p class="stat-minimal-label">Client Satisfaction</p>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+	<section class="coverage-showcase-section">
+		<div class="coverage-container">
+
+			<div class="coverage-main-header">
+				<h2 class="coverage-title"><span class="gold-gradient-text">Web Development</span> Services You Will
+					Receive with White Bunnie</h2>
+				<p class="coverage-intro-paragraph">
+					At White Bunnie, we offer end-to-end web development services designed to help businesses establish
+					a powerful online presence. From custom website design and responsive development to e-commerce
+					solutions, third-party integrations, software development, and ongoing support, we build fast,
+					secure, and scalable websites that deliver exceptional user experiences and measurable business
+					growth.
+				</p>
+			</div>
+			<div class="coverage-features-matrix">
+
+				<div class="coverage-feature-column">
+
+					<div class="feature-item-card">
+						<h3 class="feature-item-heading">Comprehensive Discovery & Planning</h3>
+						<p class="feature-item-description">
+							We begin with in-depth consultations to understand your business goals, audience, and
+							project requirements. A detailed roadmap ensures every stage of development is planned for
+							long-term success.
+						</p>
+					</div>
+
+					<div class="feature-item-card">
+						<h3 class="feature-item-heading">User-Centric Design</h3>
+						<p class="feature-item-description">
+							Our designers create clean, responsive, and intuitive interfaces focused on usability. Every
+							design decision is backed by research to deliver engaging experiences across all devices.
+						</p>
+					</div>
+
+					<div class="feature-item-card">
+						<h3 class="feature-item-heading">Robust Development</h3>
+						<p class="feature-item-description">
+							We develop scalable, secure, and high-performance websites using modern technologies and
+							frameworks. Clean code and optimized architecture ensure reliability, flexibility, and
+							future growth.
+						</p>
+					</div>
+
+					<div class="feature-item-card">
+						<h3 class="feature-item-heading">Rigorous Testing & Quality Assurance</h3>
+						<p class="feature-item-description">
+							Every website undergoes comprehensive testing across browsers, devices, and operating
+							systems. We ensure flawless functionality, performance, security, and compliance with modern
+							web standards.
+						</p>
+					</div>
+
+				</div>
+
+				<div class="coverage-feature-column">
+
+					<div class="feature-item-card">
+						<h3 class="feature-item-heading">Seamless Deployment & Launch</h3>
+						<p class="feature-item-description">
+							We handle secure deployment, hosting configuration, and website launch with minimal
+							downtime. Our team also provides documentation and guidance for a smooth transition.
+						</p>
+					</div>
+
+					<div class="feature-item-card">
+						<h3 class="feature-item-heading">Ongoing Support & Maintenance</h3>
+						<p class="feature-item-description">
+							Keep your website secure and up to date with regular maintenance, security patches,
+							performance optimization, and proactive monitoring to ensure uninterrupted business
+							operations.
+						</p>
+					</div>
+
+					<div class="feature-item-card">
+						<h3 class="feature-item-heading">Performance Optimization</h3>
+						<p class="feature-item-description">
+							We optimize website speed, Core Web Vitals, and overall performance to deliver faster
+							loading times, better user experiences, and improved search engine visibility.
+						</p>
+					</div>
+
+					<div class="feature-item-card">
+						<h3 class="feature-item-heading">Scalable Growth Solutions</h3>
+						<p class="feature-item-description">
+							Our development approach is built for future expansion, allowing your website to grow with
+							your business through scalable architecture, flexible integrations, and evolving
+							functionality.
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="coverage-footer-action-zone">
+				<a href="#" class="btn-coverage-talk">Let's Talk</a>
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+
+
+	<section class="premium-ethics-section">
+		<div class="ethics-ambient-glow"></div>
+
+		<div class="ethics-container">
+			<div class="ethics-content-wrapper">
+
+				<div class="ethics-header-zone">
+					<h2 class="ethics-main-title">Code Of Ethics</h2>
+					<p class="ethics-body-context">
+						White Bunnie is not just the <strong class="text-highlight-dark">best AI SEO agency in
+							India</strong> but also a company that is revolutionizing digital reach most seamlessly. Our
+						ethics stand on the pillars of:
+					</p>
+				</div>
+
+				<div class="ethics-pillars-matrix">
+
+					<div class="ethics-pillar-card">
+						<div class="card-icon-indicator">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+								<circle cx="12" cy="12" r="3" />
+							</svg>
+						</div>
+						<h3 class="pillar-title">Transparency</h3>
+						<p class="pillar-caption">Open processes, direct communication, and real-time dashboard
+							analytics.</p>
+					</div>
+
+					<div class="ethics-pillar-card">
+						<div class="card-icon-indicator">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+							</svg>
+						</div>
+						<h3 class="pillar-title">Honesty</h3>
+						<p class="pillar-caption">Realistic forecasting, ethical white-hat execution, and zero
+							artificial gimmicks.</p>
+					</div>
+
+					<div class="ethics-pillar-card">
+						<div class="card-icon-indicator">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+								<circle cx="9" cy="7" r="4" />
+								<path d="M22 11l-3 3-2-2" />
+							</svg>
+						</div>
+						<h3 class="pillar-title">Personal Accountability</h3>
+						<p class="pillar-caption">Dedicated performance ownership focused entirely on scaling your
+							conversion revenue.</p>
+					</div>
+
+				</div>
+
+				<div class="ethics-action-footer">
+					<a href="#" class="btn-coverage-talk">Free Trial</a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+	<section class="svc-section">
+		<div class="svc-wrap">
+
+			<div class="svc-head">
+				<h2>What makes White Bunnie the <em>Best Web Development Agency?</em></h2>
+			</div>
+
+			<div class="svc-grid">
+
+				<div class="svc-cell">
+					<span class="svc-index">01</span>
+					<h3>12+ YEARS OF WEB DEVELOPMENT EXPERTISE</h3>
+					<p>With over a decade of experience, we build fast, secure, and scalable websites tailored to
+						business goals. Our proven development process ensures high performance, exceptional user
+						experience, and long-term digital success for businesses of every size.</p>
+					<a href="#" class="svc-link">Read More</a>
+				</div>
+
+				<div class="svc-cell">
+					<span class="svc-index">02</span>
+					<h3>DEDICATED TEAM OF WEB EXPERTS</h3>
+					<p>Our experienced designers, developers, and project managers collaborate to deliver websites that
+						are visually engaging, technically robust, and conversion-focused. We provide ongoing support
+						and transparent communication throughout every stage of your project.</p>
+					<a href="#" class="svc-link">Read More</a>
+				</div>
+
+				<div class="svc-cell">
+					<span class="svc-index">03</span>
+					<h3>CLIENT-FIRST APPROACH & RESULTS</h3>
+					<p>Your business objectives drive every decision we make. We focus on creating websites that improve
+						user engagement, generate qualified leads, and deliver measurable business growth while
+						maintaining long-term client relationships.</p>
+					<a href="#" class="svc-link">Read More</a>
+				</div>
+
+				<div class="svc-cell">
+					<span class="svc-index">04</span>
+					<h3>LATEST TECHNOLOGIES & FRAMEWORKS</h3>
+					<p>We build websites using modern frameworks, responsive design, and clean development practices.
+						Our solutions are optimized for speed, security, scalability, and seamless performance across
+						all devices and browsers.</p>
+					<a href="#" class="svc-link">Read More</a>
+				</div>
+
+				<div class="svc-cell">
+					<span class="svc-index">05</span>
+					<h3>FLEXIBLE & AFFORDABLE SOLUTIONS</h3>
+					<p>Whether you're a startup or an enterprise, we offer cost-effective web development packages
+						without compromising on quality. Every solution is customized to match your requirements,
+						budget, and future growth plans.</p>
+					<a href="#" class="svc-link">Read More</a>
+				</div>
+
+				<div class="svc-cell">
+					<span class="svc-index">06</span>
+					<h3>TRANSPARENT PROCESS & SUPPORT</h3>
+					<p>From planning to launch and beyond, you'll receive regular updates, clear timelines, and
+						dedicated support. We believe transparency, accountability, and continuous collaboration are
+						essential for delivering successful web development projects.</p>
+					<a href="#" class="svc-link">Read More</a>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+
+	<!-- CTA BANNER -->
+	<section class="cta-banner" data-nav-theme="dark">
+		<div class="wrap">
+			<div class="cta-banner-inner">
+				<div class="cta-banner-left">
+					<h2>Get a Free 30-Minute Consultation</h2>
+				</div>
+
+				<div class="hc-divider"></div>
+
+				<div class="cta-banner-right">
+					<p>Get Free Website Analysis, Strategic Plans, And Key Performance Indicators.</p>
+					<div class="cta-banner-actions">
+						<a href="#contact" class="btn cta-btn-outline">
+							<i class="fa-regular fa-file-lines"></i> Get Free Proposal
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+								stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+								<line x1="5" y1="12" x2="19" y2="12" />
+								<polyline points="12,5 19,12 12,19" />
+							</svg>
+						</a>
+						<a href="tel:+919876543210" class="btn cta-btn-solid">
+							<i class="fa-solid fa-phone"></i> Let's Talk
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+<section class="wb-process">
+  <div class="wb-process__inner">
+
+    <div class="wb-process__head">
+      <h2 class="wb-process__title">Process Followed by <span class="gold-gradient-text">White Bunnie</span></h2>
+      <p class="wb-process__sub">A clear, proven path from first conversation to launch and beyond — every step built around your goals.</p>
+    </div>
+
+    <ol class="wb-process__list">
+
+      <li class="wb-step">
+        <span class="wb-step__num">01</span>
+        <div class="wb-step__body">
+          <h3 class="wb-step__title">Understanding Your Vision</h3>
+          <p class="wb-step__desc">We begin by understanding your business goals, target audience, and project requirements. Through detailed discussions and careful planning, we gather every requirement needed to build a website that aligns with your vision.</p>
+        </div>
+        <div class="wb-step__aside">
+          <span class="wb-step__meta">Discovery</span>
+          <span class="wb-step__arrow" aria-hidden="true">&rarr;</span>
+        </div>
+      </li>
+
+      <li class="wb-step">
+        <span class="wb-step__num">02</span>
+        <div class="wb-step__body">
+          <h3 class="wb-step__title">Planning &amp; Conceptualization</h3>
+          <p class="wb-step__desc">Our team develops a clear project roadmap, defining the website structure, features, and user experience. This strategic planning ensures a smooth development process and successful project execution.</p>
+        </div>
+        <div class="wb-step__aside">
+          <span class="wb-step__meta">Strategy</span>
+          <span class="wb-step__arrow" aria-hidden="true">&rarr;</span>
+        </div>
+      </li>
+
+      <li class="wb-step">
+        <span class="wb-step__num">03</span>
+        <div class="wb-step__body">
+          <h3 class="wb-step__title">Designing &amp; Development</h3>
+          <p class="wb-step__desc">We create intuitive designs and develop your website using modern technologies. After your review and approval, our developers build a responsive, scalable, and high-performance digital solution.</p>
+        </div>
+        <div class="wb-step__aside">
+          <span class="wb-step__meta">Build</span>
+          <span class="wb-step__arrow" aria-hidden="true">&rarr;</span>
+        </div>
+      </li>
+
+      <li class="wb-step">
+        <span class="wb-step__num">04</span>
+        <div class="wb-step__body">
+          <h3 class="wb-step__title">Testing &amp; Quality Assurance</h3>
+          <p class="wb-step__desc">Every website undergoes comprehensive testing across browsers and devices to ensure responsiveness, security, performance, and compliance with modern web standards before deployment.</p>
+        </div>
+        <div class="wb-step__aside">
+          <span class="wb-step__meta">Quality</span>
+          <span class="wb-step__arrow" aria-hidden="true">&rarr;</span>
+        </div>
+      </li>
+
+      <li class="wb-step">
+        <span class="wb-step__num">05</span>
+        <div class="wb-step__body">
+          <h3 class="wb-step__title">Website Launch</h3>
+          <p class="wb-step__desc">After final approval, we deploy your website to a secure hosting environment and ensure a smooth launch. Our team verifies functionality and provides post-launch technical support.</p>
+        </div>
+        <div class="wb-step__aside">
+          <span class="wb-step__meta">Launch</span>
+          <span class="wb-step__arrow" aria-hidden="true">&rarr;</span>
+        </div>
+      </li>
+
+      <li class="wb-step">
+        <span class="wb-step__num">06</span>
+        <div class="wb-step__body">
+          <h3 class="wb-step__title">Reporting &amp; Ongoing Support</h3>
+          <p class="wb-step__desc">Following launch, we provide regular performance reports, maintenance, security updates, and continuous support to keep your website secure, optimized, and ready for future growth.</p>
+        </div>
+        <div class="wb-step__aside">
+          <span class="wb-step__meta">Support</span>
+          <span class="wb-step__arrow" aria-hidden="true">&rarr;</span>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+	<section class="explorer" aria-labelledby="ex-title">
+		<div class="wrap">
+
+			<div class="head">
+				<h2 id="ex-title">Hire a results-driven <br> <span class="grad">Web Development Agency</span></h2>
+				<p>Hiring a top web development agency in India isn't easy one search returns hundreds of results.
+					Explore the essentials below before you choose a partner.</p>
+			</div>
+
+			<div class="frame">
+
+				<!-- LEFT RAIL -->
+				<div class="rail">
+					<div class="rail-title">Explore the essentials</div>
+					<div class="tabs" id="tabs">
+						<span class="indicator" id="indicator"></span>
+
+						<button class="tab active" data-target="p1">
+							<span class="idx">01</span>
+							<span class="lbl">What is a web development agency?</span>
+							<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg></span>
+						</button>
+
+						<button class="tab" data-target="p2">
+							<span class="idx">02</span>
+							<span class="lbl">How does it work?</span>
+							<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg></span>
+						</button>
+
+						<button class="tab" data-target="p3">
+							<span class="idx">03</span>
+							<span class="lbl">Who should seek this service?</span>
+							<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg></span>
+						</button>
+
+						<button class="tab" data-target="p4">
+							<span class="idx">04</span>
+							<span class="lbl">What are the advantages?</span>
+							<span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+									<line x1="5" y1="12" x2="19" y2="12" />
+									<polyline points="12 5 19 12 12 19" />
+								</svg></span>
+						</button>
+					</div>
+				</div>
+
+				<!-- RIGHT PANE -->
+				<div class="pane">
+
+					<div class="panel show" id="p1">
+						<span class="ghost">01</span>
+						<h3>What is a web development agency?</h3>
+						<p>A web development agency is a dedicated team of professionals - developers, designers,
+							strategists, and QA specialists - that plans, builds, and maintains websites and web
+							applications from start to finish.</p>
+						<p>Instead of managing scattered freelancers, you get <strong>one accountable partner</strong>.
+							White Bunnie has been at the forefront of customized web development for years, building
+							sites shaped around your goals - never recycled templates.</p>
+						<div class="chips"><span class="chip">Custom-built</span><span class="chip">One
+								partner</span><span class="chip">End-to-end</span></div>
+					</div>
+
+					<div class="panel" id="p2">
+						<span class="ghost">02</span>
+						<h3>How does it work?</h3>
+						<p>A clear, collaborative path from first call to launch - transparent at every stage, with your
+							sign-off before we ship.</p>
+						<div class="flow">
+							<div class="step"><span class="n">1</span><span>Discovery</span></div>
+							<div class="step"><span class="n">2</span><span>Strategy &amp; wireframes</span></div>
+							<div class="step"><span class="n">3</span><span>Design</span></div>
+							<div class="step"><span class="n">4</span><span>Development</span></div>
+							<div class="step"><span class="n">5</span><span>Testing &amp; QA</span></div>
+							<div class="step"><span class="n">6</span><span>Launch &amp; support</span></div>
+						</div>
+					</div>
+
+					<div class="panel" id="p3">
+						<span class="ghost">03</span>
+						<h3>Who should seek this service?</h3>
+						<p>It's the right fit for startups that need a credible first presence, established brands ready
+							to redesign or scale, e-commerce businesses, and teams that need a custom web app without an
+							in-house development team.</p>
+						<p>In short: if your website needs to do more than exist - <strong>generate leads, sell, or
+								automate</strong> - an agency is worth it.</p>
+						<div class="chips"><span class="chip">Startups</span><span class="chip">Scaling
+								brands</span><span class="chip">E-commerce</span><span class="chip">Custom apps</span>
+						</div>
+					</div>
+
+					<div class="panel" id="p4">
+						<span class="ghost">04</span>
+						<h3>What are the advantages?</h3>
+						<p>You gain senior expertise without the overhead of full-time hires, plus a website that's
+							engineered to perform - not just to look good.</p>
+						<div class="adv">
+							<div>Faster time-to-market</div>
+							<div>Conversion-focused design</div>
+							<div>Mobile-responsive builds</div>
+							<div>SEO-ready from day one</div>
+							<div>Built to scale with you</div>
+							<div>Ongoing post-launch support</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- ════════════════════════════════════
+  FAQ SECTION
+════════════════════════════════════ -->
+	<section class="faq-section">
+		<div class="wrap">
+			<div class="faq-grid">
+
+				<div class="faq-head-col">
+					<!-- <span class="svc-label-badge">FAQs</span> -->
+					<h2 class="h-main" style="text-align:left">Frequently Asked <em>Questions</em></h2>
+					<p class="section-sub" style="text-align:left;margin:0 0 28px">Can't find what you're looking for?
+						Talk to our team.</p>
+					<a href="#contact" class="btn-coverage-talk">Ask Us Anything <svg viewBox="0 0 24 24" fill="none"
+							stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+							width="16" height="16">
+							<line x1="5" y1="12" x2="19" y2="12" />
+							<polyline points="12,5 19,12 12,19" />
+						</svg></a>
+				</div>
+
+				<div class="faq-list">
+
+					<div class="faq-item">
+						<button class="faq-q">Why should I choose a digital marketing agency for web development?<svg
+								class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="6 9 12 15 18 9" />
+							</svg></button>
+						<div class="faq-a">
+							<div class="faq-a-inner">
+								<p>
+									A digital marketing agency builds websites with business growth in mind, not just
+									aesthetics. Your website is designed to be fast, responsive, SEO-friendly, and
+									optimized for lead generation and conversions from day one. At White Bunnie, we
+									combine web development with marketing expertise to create websites that attract
+									visitors, engage users, and help your business achieve measurable results.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<button class="faq-q">What web development services are offered by White Bunnie?<svg
+								class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="6 9 12 15 18 9" />
+							</svg></button>
+						<div class="faq-a">
+							<div class="faq-a-inner">
+								<p>In its capacity as a top digital marketing company, WhiteBunnie offers comprehensive
+									website development services, including: Custom website design and development,
+									E-commerce website development, Content management system (CMS) integration,
+									Responsive and mobile-friendly design, Website maintenance and support.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<button class="faq-q">How long does it take to build a website from scratch?<svg
+								class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="6 9 12 15 18 9" />
+							</svg></button>
+						<div class="faq-a">
+							<div class="faq-a-inner">
+								<p>As the best web development company White Bunnie works efficiently and diligently.
+									The timeline for the creation of a website would vary from one project to the next.
+									However, we aim to deliver all our web development projects within a 6-8 weeks
+									timeframe. Our consistency has made us the top digital marketing agency.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<button class="faq-q">How much would the development of my website cost? <svg
+								class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+								stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="6 9 12 15 18 9" />
+							</svg></button>
+						<div class="faq-a">
+							<div class="faq-a-inner">
+								<p>We offer highly competitive web development packages for web development. The
+									specific cost would depend on the nature of the website. Call us today for a free
+									quote. Join hands with the top web development company.</p>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- ════════════════════════════════════
+  CONTACT SECTION
+════════════════════════════════════ -->
+	<section class="contact-section" id="contact" data-nav-theme="dark">
+		<div class="wrap">
+			<div class="contact-grid">
+
+				<div class="contact-left">
+					<!-- <span class="svc-label-badge contact-badge">Let's Get Started</span> -->
+					<h2>Change The Way You Engage With <em> Your Audience </em></h2>
+					<p>Get In Touch With Our Highly Skilled Digital <br> Boost Your Website Rankings.</p>
+
+					<div class="contact-watermark">
+						<img src="./newHome/footerArrow.png" alt="White Bunnie" class="contact-logo">
+					</div>
+
+
+					<div class="wb-flex-3col-wrap">
+
+						<div class="wb-flex-3col-item">
+							<h3 class="wb-flex-3col-title">2,800+</h3>
+							<span class="wb-flex-3col-text">Monthly clicks delivered</span>
+						</div>
+
+						<div class="wb-flex-3col-item">
+							<h3 class="wb-flex-3col-title">5.0 ★</h3>
+							<span class="wb-flex-3col-text">Clutch rating</span>
+						</div>
+
+						<div class="wb-flex-3col-item">
+							<h3 class="wb-flex-3col-title">35+</h3>
+							<span class="wb-flex-3col-text">Combined years of expertise</span>
+						</div>
+
+					</div>
+
+
+
+					<div class="review-logos">
+						<div class="review-item">
+							<img src="https://whitebunnie.com/wp-content/uploads/2025/10/cluth.png" alt="Clutch">
+							<p>Rated 5/5 Stars</p>
+						</div>
+						<div class="review-item">
+							<img src="https://whitebunnie.com/wp-content/uploads/2025/10/Group-689-2.png" alt="Google">
+							<p>Rated 4.9/5 Stars</p>
+						</div>
+						<div class="review-item">
+							<img src="https://whitebunnie.com/wp-content/uploads/2025/10/upwork.png" alt="Upwork">
+							<p>Top Rated Plus</p>
+						</div>
+					</div>
+
+
+
+				</div>
+
+				<div class="contact-right">
+
+					<div style="font-size: 24px; font-weight: 700; margin-bottom: 1px;">Your Website Isn't Ready for
+						<em>AI Search</em>
+					</div>
+					<p style="font-size: 12px; color: #545454; margin-bottom: 20px;">Find out potential AI visibility
+						and ranking issues your site still needs to fix to earn
+						AI-generated mentions.</p>
+
+					<form class="contact-form" id="auditForm">
+						<div class="form-row">
+							<div class="form-group">
+								<label for="cf-name">Full Name *</label>
+								<input type="text" id="cf-name" name="name" placeholder="John Smith" required>
+							</div>
+							<div class="form-group">
+								<label for="cf-email">Email Address *</label>
+								<input type="email" id="cf-email" name="email" placeholder="john@company.com" required>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group">
+								<label for="cf-phone">Phone Number</label>
+								<input type="tel" id="cf-phone" name="phone" placeholder="+91 98765 43210">
+							</div>
+							<div class="form-group">
+								<label for="cf-website">Website URL</label>
+								<input type="text" id="cf-website" name="website" placeholder="https://yourwebsite.com">
+							</div>
+						</div>
+						<!-- <div class="form-group">
+							<label for="cf-website">Website URL</label>
+							<input type="url" id="cf-website" name="website" placeholder="https://yourwebsite.com">
+						</div> -->
+						<div class="form-group">
+							<label for="cf-service">Service Interested In</label>
+							<select id="cf-service" name="service">
+								<option value="" disabled selected>Select a service</option>
+								<option>AI SEO</option>
+								<option>SEO</option>
+								<option>PPC / Google Ads</option>
+								<option>Social Media Marketing</option>
+								<option>Web Development</option>
+								<option>Performance Marketing</option>
+								<option>Full Digital Marketing</option>
+								<option>Other</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="cf-message">Tell Us About Your Goals</label>
+							<textarea id="cf-message" name="message" rows="3"
+								placeholder="Briefly describe your marketing challenges and goals..."></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary btn-full">
+							Get My Free Audit
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+								stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+								<line x1="5" y1="12" x2="19" y2="12" />
+								<polyline points="12,5 19,12 12,19" />
+							</svg>
+						</button>
+						<!-- <p class="form-note">No credit card required · 100% free · Response within 24 hours</p> -->
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	<!-- ════════════════════════════════════
+  LOCATIONS SECTION
+════════════════════════════════════ -->
+	<section class="locations-section">
+		<div class="locations-container">
+
+			<div class="locations-header">
+				<h2 class="locations-title">Proudly <span class="gold-gradient-text">Serving Here</span></h2>
+				<p class="locations-subtitle">Delivering AI-powered digital growth to businesses across India and
+					beyond.</p>
+			</div>
+
+			<div class="locations-cards-grid">
+
+				<div class="location-card">
+					<div class="location-img-wrap">
+						<img src="./locations/noida.jpg" alt="Noida" class="location-img">
+						<div class="location-img-overlay"></div>
+					</div>
+					<div class="location-card-footer">
+						<div class="location-name-row">
+							<i class="fa-solid fa-location-dot location-pin"></i>
+							<span class="location-name">Noida</span>
+						</div>
+						<p class="location-desc">Our HQ driving AI SEO growth for India's tech corridor since day one.
+						</p>
+					</div>
+				</div>
+
+				<div class="location-card">
+					<div class="location-img-wrap">
+						<img src="./locations/mumbai.jpg" alt="Mumbai" class="location-img">
+						<div class="location-img-overlay"></div>
+					</div>
+					<div class="location-card-footer">
+						<div class="location-name-row">
+							<i class="fa-solid fa-location-dot location-pin"></i>
+							<span class="location-name">Mumbai</span>
+						</div>
+						<p class="location-desc">Helping Mumbai's brands capture AI search visibility in a competitive
+							market.</p>
+					</div>
+				</div>
+
+				<div class="location-card">
+					<div class="location-img-wrap">
+						<img src="./locations/delhi.jpg" alt="Delhi" class="location-img">
+						<div class="location-img-overlay"></div>
+					</div>
+					<div class="location-card-footer">
+						<div class="location-name-row">
+							<i class="fa-solid fa-location-dot location-pin"></i>
+							<span class="location-name">Delhi</span>
+						</div>
+						<p class="location-desc">Powering Delhi's enterprises with data-driven AI SEO strategies that
+							rank.</p>
+					</div>
+				</div>
+
+				<div class="location-card">
+					<div class="location-img-wrap">
+						<img src="./locations/Filorida.jpg" alt="Florida" class="location-img">
+						<div class="location-img-overlay"></div>
+					</div>
+					<div class="location-card-footer">
+						<div class="location-name-row">
+							<i class="fa-solid fa-location-dot location-pin"></i>
+							<span class="location-name">Florida</span>
+						</div>
+						<p class="location-desc">Serving Florida's growing businesses with cutting-edge AI search
+							solutions.</p>
+					</div>
+				</div>
+
+				<div class="location-card">
+					<div class="location-img-wrap">
+						<img src="./locations/ohio.jpg" alt="Ohio" class="location-img">
+						<div class="location-img-overlay"></div>
+					</div>
+					<div class="location-card-footer">
+						<div class="location-name-row">
+							<i class="fa-solid fa-location-dot location-pin"></i>
+							<span class="location-name">Ohio</span>
+						</div>
+						<p class="location-desc">Boosting Ohio's B2B brands with AI-powered SEO that delivers measurable
+							ROI.</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+	<!-- ════════════════════════════════════
+  PRE-FOOTER SLIM CTA
+════════════════════════════════════ -->
+	<!-- <section class="pre-footer-cta">
+		<div class="wrap">
+			<div class="pfc-inner">
+
+				<div class="pfc-left">
+
+					<h3 class="pfc-heading">Ready to <em>10x</em> your digital growth?</h3>
+					<p class="pfc-sub">Join 100+ B2B brands that trust White Bunnie to turn clicks into clients with
+						AI-powered strategies built for 2025.</p>
+
+					<div class="pfc-trust-row">
+						<div class="pfc-trust-item">
+							<span class="pfc-stars">★★★★★</span>
+							<span class="pfc-trust-label">5.0 on Clutch</span>
+						</div>
+						<span class="pfc-sep">·</span>
+						<div class="pfc-trust-item">
+							<strong>100+</strong>
+							<span class="pfc-trust-label">Clients Served</span>
+						</div>
+						<span class="pfc-sep">·</span>
+						<div class="pfc-trust-item">
+							<strong>8+</strong>
+							<span class="pfc-trust-label">Years of Expertise</span>
+						</div>
+						<span class="pfc-sep">·</span>
+					
+					</div>
+				</div>
+
+				<div class="pfc-right">
+					<a href="#contact" class="pfc-btn-primary">
+						<i class="fa-regular fa-file-lines"></i>
+						Get Free Proposal
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+							stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+							<line x1="5" y1="12" x2="19" y2="12" />
+							<polyline points="12,5 19,12 12,19" />
+						</svg>
+					</a>
+					<a href="tel:+919876543210" class="pfc-btn-ghost">
+						<i class="fa-solid fa-phone"></i>
+						Call Us
+					</a>
+
+				</div>
+
+			</div>
+		</div>
+	</section> -->
+
+	<!-- ════════════════════════════════════
+  FOOTER
+════════════════════════════════════ -->
+
+
+	<footer class="wb-footer" data-nav-theme="dark">
+
+		<div class="wb-container">
+
+			<!-- COLUMN 1 -->
+			<div class="wb-col wb-col-1">
+				<div class="wb-logo"><img src="https://whitebunnie.com/wp-content/uploads/2024/10/logo.png"></div>
+
+				<p class="wb-desc">
+					AI Search Marketing Agency for IT Services, SaaS & B2B Tech - India & USA.
+				</p>
+
+				<p class="wb-label">We get you cited on</p>
+
+				<div class="wb-tags">
+					<span>ChatGPT</span>
+					<span>Perplexity</span>
+					<span>Gemini</span>
+					<span>Claude</span>
+					<span>SearchGPT</span>
+					<span>Google SGE</span>
+				</div>
+
+				<p class="wb-address">Sector 63, Noida, 201301, India</p>
+
+				<div class="iconCont">
+					<span>
+						<a target="_blank" href="https://www.facebook.com/Dwhitebunnie"
+							title="White Bunnie on Facebook">
+							<img src="https://whitebunnie.com/wp-content/uploads/2024/12/facebook-1.png" alt="facebook">
+						</a>
+					</span>
+
+					<span>
+						<a target="_blank" href="https://twitter.com/WhiteBunnie6" title="White Bunnie on X (Twitter)">
+							<img src="https://whitebunnie.com/wp-content/uploads/2024/12/twitter.png" alt="twitter">
+						</a>
+					</span>
+
+					<span>
+						<a target="_blank" href="https://www.instagram.com/dwhitebunnie/"
+							title="White Bunnie on Instagram">
+							<img src="https://whitebunnie.com/wp-content/uploads/2024/12/instagram.png" alt="twitter">
+						</a>
+					</span>
+
+
+					<span>
+						<a target="_blank" href="https://in.linkedin.com/company/whitebunnie/"
+							title="White Bunnie on LinkedIn">
+							<img src="https://whitebunnie.com/wp-content/uploads/2024/12/linkedin.png" alt="linkedin">
+
+						</a>
+					</span>
+
+					<span>
+						<a target="_blank" href="https://www.youtube.com/@whitebunniedigital/"
+							title="White Bunnie on YouTube">
+							<img src="https://whitebunnie.com/wp-content/uploads/2024/12/youtube.png" alt="youtube">
+						</a>
+					</span>
+
+				</div>
+			</div>
+
+			<!-- COLUMN 2 -->
+			<div class="wb-col">
+				<h4>AI SEARCH SERVICES</h4>
+				<ul>
+					<li><a href="#">GEO - Generative Engine Optimization</a></li>
+					<li><a href="#">AEO - Answer Engine Optimization </a></li>
+					<li><a href="#">AI Visibility Audit </a></li>
+					<li><a href="#">Schema Markup & Structured Data</a></li>
+					<li><a href="#">AI Citation Building</a></li>
+					<li><a href="#">SEO for B2B & IT</a></li>
+					<li><a href="#">Google Ads / PPC</a></li>
+					<li><a href="#">Website Design & Dev</a></li>
+					<li><a href="#">White-Label SEO & GEO</a></li>
+				</ul>
+			</div>
+
+			<!-- COLUMN 3 -->
+			<div class="wb-col">
+				<h4>INDUSTRIES WE SERVE</h4>
+				<ul>
+					<li><a href="#">IT Services & ITES</a></li>
+					<li><a href="#">SaaS Companies</a></li>
+					<li><a href="#">B2B Tech Brands</a></li>
+					<li><a href="#">Oracle & ERP Consulting</a></li>
+					<li><a href="#">eCommerce</a></li>
+					<li><a href="#">Real Estate</a></li>
+					<li><a href="#">Finance & Fintech</a></li>
+				</ul>
+
+
+			</div>
+
+			<!-- COLUMN 4 -->
+			<div class="wb-col">
+				<h4>RESOURCES</h4>
+				<ul>
+					<li><a href="#">GEO Guide for B2B SaaS </a></li>
+					<li><a href="#">AEO Playbook for IT Brands</a></li>
+					<li><a href="https://whitebunnie.com/aeo-maturity-model/">AI Visibility Tracker Tool</a></li>
+					<li><a href="#">Schema Markup Guide</a></li>
+					<li><a href="./free-seo-audit.html">Free SEO Audit</a></li>
+					<li><a href="#">Blog & Insights</a></li>
+					<li><a href="#">Sitemap</a></li>
+				</ul>
+			</div>
+
+			<!-- COLUMN 5 -->
+			<div class="wb-col">
+				<h4>REGION</h4>
+
+				<ul class="region-list">
+					<li><a href="#"></a><img src="https://whitebunnie.com/wp-content/uploads/2026/04/india.png"> IND
+					</li>
+					<li><a href="#"></a><img src="https://whitebunnie.com/wp-content/uploads/2026/04/us.png"> USA</li>
+					<li><a href="#"></a><img src="https://whitebunnie.com/wp-content/uploads/2026/04/uae.png"> UAE</li>
+					<li><a href="#"></a><img src="https://whitebunnie.com/wp-content/uploads/2026/04/canada.png"> CAN
+					</li>
+				</ul>
+
+				<iframe style="margin:10px 0px 0px;max-width:320x;"
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.1474767051486!2d77.37573897528881!3d28.625341775668737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5229b065c81%3A0xf39234a7e6a0c2cd!2sWhite%20Bunnie%20-%20Digital%20Marketing%20Agency%20in%20Noida%20%7C%20SEO%20Agency%20in%20Noida!5e0!3m2!1sen!2sin!4v1738731978606!5m2!1sen!2sin"
+					width="100%" height="200px" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+
+		</div>
+
+
+
+		<!-- BOTTOM BAR -->
+		<div class="wb-bottom">
+			<div class="wb-copy">
+				© 2026 White Bunnie Digital Pvt. Ltd.
+			</div>
+
+			<div class="wb-legal">
+				<a href="#">Privacy Policy</a>
+				<a href="#">Terms of Service</a>
+				<a href="#">Sitemap</a>
+			</div>
+
+			<div class="wb-cert">
+				Google Partner · Meta Business Partner · Since 2015
+			</div>
+
+			<div class="wb-quick">
+				<a href="#">GEO</a>
+				<a href="#">AEO</a>
+				<a href="#">AI Visibility Audit</a>
+				<a href="#">White-Label</a>
+
+			</div>
+		</div>
+
+	</footer>
+
+
+	<script src="./script.js"></script>
+
+
+	<script>
+		const modules = document.querySelectorAll('.module');
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry, i) => {
+				if (entry.isIntersecting) {
+					setTimeout(() => entry.target.classList.add('in-view'), i * 70);
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.15 });
+		modules.forEach(m => observer.observe(m));
+
+
+
+		(function () {
+			const tabs = [...document.querySelectorAll('.tab')];
+			const panels = [...document.querySelectorAll('.panel')];
+			const indicator = document.getElementById('indicator');
+
+			function moveIndicator(tab) {
+				indicator.style.height = tab.offsetHeight + 'px';
+				indicator.style.transform = 'translateY(' + tab.offsetTop + 'px)';
+			}
+			function activate(tab) {
+				tabs.forEach(t => t.classList.remove('active'));
+				panels.forEach(p => p.classList.remove('show'));
+				tab.classList.add('active');
+				document.getElementById(tab.dataset.target).classList.add('show');
+				moveIndicator(tab);
+			}
+			tabs.forEach(t => t.addEventListener('click', () => activate(t)));
+			// init indicator on the default active tab
+			window.addEventListener('load', () => moveIndicator(document.querySelector('.tab.active')));
+			window.addEventListener('resize', () => { const a = document.querySelector('.tab.active'); if (a) moveIndicator(a); });
+		})();
+
+	</script>
+
+
+</body>
+
+</html>
