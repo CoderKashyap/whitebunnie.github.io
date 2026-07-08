@@ -1766,8 +1766,14 @@ body {
   .ppc-contact-stats,
   .ppc-dashboard-metrics,
   .form-row,
-  .wb-bottom {
+  .wb-bottom,
+  .ppc-ethics-cards,
+  .ppc-pointers-grid {
     grid-template-columns: 1fr;
+  }
+
+  .ppc-pointers-grid {
+    gap: 30px;
   }
 
   .ppc-stats-grid {
@@ -1812,9 +1818,23 @@ body {
   .ppc-market-proof,
   .ppc-ethics-section,
   .contact-section,
-  .ppc-banner-section {
+  .ppc-banner-section,
+  .ppc-adtypes-section,
+  .ppc-pointers-section {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .ppc-ethics-card {
+    padding: 26px 22px;
+  }
+
+  .ppc-pointer-item {
+    gap: 16px;
+  }
+
+  .ppc-pointer-num {
+    font-size: 1.9rem;
   }
 
   .ppc-banner-section {
