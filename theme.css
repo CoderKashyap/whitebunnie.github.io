@@ -894,7 +894,7 @@ h2.h-main em {
 ══════════════════════════════════════════════════════════ */
 .cta-banner {
   background: var(--clr-dark-2);
-  padding: 64px 0;
+  padding: 64px 30px;
 }
 
 .cta-banner-inner {
@@ -912,8 +912,9 @@ h2.h-main em {
 }
 
 .cta-banner-left h2 {
-  font-size: var(--fs-h2);
-  font-weight: 600;
+  /* font-size: var(--fs-h2); */
+  font-size: var(--fs-section-heading);
+  /* font-weight: 600; */
   color: #fff;
   line-height: 1.1;
   background: none;
@@ -922,7 +923,7 @@ h2.h-main em {
 }
 
 .cta-banner-left h2 em {
-  font-style: normal;
+  /* font-style: normal; */
   color: #529bf4;
   -webkit-text-fill-color: #529bf4;
 }
@@ -988,6 +989,21 @@ h2.h-main em {
 }
 
 @media (max-width: 980px) {
+
+  
+  .cta-banner-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+  }
+
+  .cta-banner {
+    background: var(--clr-dark-2);
+    padding: 40px 30px;
+}
+
+
   .hidden-xs {
     display: none;
   }
@@ -1000,6 +1016,7 @@ h2.h-main em {
   .cta-banner-left h2 {
     text-align: center;
     line-height: 1.2;
+    font-weight: 800;
   }
 
   .hc-divider {
@@ -1012,9 +1029,12 @@ h2.h-main em {
 }
 
 @media (max-width: 640px) {
-  .cta-banner-actions {
-    flex-direction: column;
+
+  .cta-banner {
+    background: var(--clr-dark-2);
+    padding: 54px 20px;
   }
+
 }
 
 @media (max-width: 480px) {
