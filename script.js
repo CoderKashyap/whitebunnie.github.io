@@ -71,71 +71,19 @@ if (revealEls.length && 'IntersectionObserver' in window) {
     revealEls.forEach(el => obs.observe(el));
 }
 
-// Client Video Reviews carousel
-const csCards = [
-    {
-        video: './video/cheng.mp4',
-        review: '"Impressive team, fast execution, and growth-driven strategies delivering exceptional content consistently."',
-        name: 'Randy Cheng',
-        designation: 'Founder & CEO, Collab Management Group'
-    },
-    {
-        video: './video/seth.mp4',
-        review: '"Exceptional dedication, attentiveness, and productivity make WhiteBunnie a reliable growth partner."',
-        name: 'Seth Kleinman',
-        designation: 'Co-Founder, Go Remote Cr'
-    },
-    {
-        video: './video/Christina.mp4',
-        review: '"Their team invested deeply in our growth. The performance was beyond what we expected."',
-        name: 'Christina',
-        designation: 'Co-Founder, Segwise.ai'
-    },
-    {
-        video: './newHome/Testimonial.mp4',
-        review: '"Consistently delivering returns while saving our time. That\'s White Bunnie for you."',
-        name: 'Adarsh Menon',
-        designation: 'Partner, Fireside Ventures | ex-CXO, Flipkart'
-    }
-];
-let csPage = 0; 
-const csPerPage = 3;
-const csTotal = csCards.length;
-const csTotalPages = Math.ceil(csTotal / csPerPage);
+// Client Video Reviews carousel — content lives in the HTML, JS only handles sliding
+let csPage = 0;
 const csTrack = document.getElementById('csTrack');
-
-// Build all pages upfront so sliding works
-if (csTrack) {
-    const pages = [];
-    for (let pi = 0; pi < csTotal; pi += csPerPage) {
-        pages.push(csCards.slice(pi, pi + csPerPage));
-    }
-    csTrack.innerHTML = pages.map(page => `
-			<div class="cs-page">
-				${page.map(c => `
-					<article class="cs-card">
-						<div class="cs-video-wrap">
-							<video src="${c.video}" autoplay muted loop playsinline></video>
-						</div>
-						<div class="cs-body">
-							<p class="cs-review-quote">${c.review}</p>
-							<div class="cs-reviewer">
-								<span class="cs-reviewer-name">${c.name}</span>
-								<span class="cs-reviewer-desig">${c.designation}</span>
-							</div>
-						</div>
-					</article>
-				`).join('')}
-			</div>
-		`).join('');
-}
+const csPages = csTrack ? Array.from(csTrack.querySelectorAll('.cs-page')) : [];
+const csTotal = csTrack ? csTrack.querySelectorAll('.cs-card').length : 0;
+const csTotalPages = csPages.length;
 
 function renderCS() {
     const countEl = document.getElementById('csCount');
-    if (!csTrack) return;
-    const start = csPage * csPerPage;
-    const end = Math.min(start + csPerPage, csTotal);
-    countEl.textContent = (start + 1) + ' - ' + end + ' of ' + csTotal;
+    if (!csTrack || !countEl) return;
+    const cardsBefore = csPages.slice(0, csPage).reduce((n, p) => n + p.querySelectorAll('.cs-card').length, 0);
+    const cardsInPage = csPages[csPage] ? csPages[csPage].querySelectorAll('.cs-card').length : 0;
+    countEl.textContent = (cardsBefore + 1) + ' - ' + (cardsBefore + cardsInPage) + ' of ' + csTotal;
     csTrack.style.transform = `translateX(-${csPage * 100}%)`;
 }
 
