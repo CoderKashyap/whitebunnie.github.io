@@ -41,7 +41,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 8px;
   border: 1px solid rgba(24, 119, 242, 0.18);
   background: rgba(255, 255, 255, 0.72);
   color: var(--clr-primary);
@@ -164,7 +164,7 @@ body {
 
 .ppc-panel-chip {
   padding: 10px 14px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(24, 119, 242, 0.1);
   color: var(--clr-primary);
   font-size: 12px;
@@ -223,7 +223,7 @@ body {
   height: 10px;
   margin-bottom: 18px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 999px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -542,7 +542,7 @@ body {
 .ppc-outcome-badge {
   width: 52px;
   height: 52px;
-  border-radius: 999px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -657,7 +657,7 @@ body {
 .ppc-issue-list i {
   width: 24px;
   height: 24px;
-  border-radius: 999px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -858,7 +858,7 @@ body {
   right: 22px;
   top: 0;
   height: 3px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: var(--ppc-proof-accent, linear-gradient(90deg, #60a5fa, #38bdf8));
 }
 
@@ -898,7 +898,7 @@ body {
   align-items: center;
   min-height: 34px;
   padding: 0 12px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #dbeafe;
@@ -975,7 +975,7 @@ body {
   position: relative;
   height: 10px;
   overflow: hidden;
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -1149,7 +1149,7 @@ body {
   gap: 8px;
   margin-top: 20px;
   padding: 10px 22px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: linear-gradient(135deg, var(--clr-primary) 0%, #0a5be0 100%);
   color: #fff;
   font-size: 0.92rem;
@@ -1590,7 +1590,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 8px;
   background: #16a34a;
   box-shadow: 0 14px 34px rgba(22, 163, 74, 0.28);
   z-index: 1100;
@@ -1644,7 +1644,7 @@ body {
 
 .wb-tags span {
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 7px 12px;
   font-size: 0.78rem;
 }
@@ -2237,7 +2237,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 9px 15px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: var(--clr-primary-lt);
   border: 1px solid rgba(24, 119, 242, .2);
   color: var(--clr-primary-dk);
@@ -2656,5 +2656,500 @@ body {
 
   .ppc-banner-copy {
     text-align: center;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   New CTAs — inserted between sections to lift interaction
+══════════════════════════════════════════════════════════ */
+
+/* 1. Slim inline strip CTA */
+.ppc-cta-strip-section {
+  padding: 26px 24px 6px;
+}
+
+.ppc-cta-strip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 26px 30px;
+  border-radius: 8px;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(120deg, rgba(24, 119, 242, 0.55), rgba(24, 119, 242, 0.05) 60%, rgba(24, 119, 242, 0.4)) border-box;
+  border: 1.5px solid transparent;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.ppc-cta-strip-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--clr-primary) 0%, #0a5be0 100%);
+  color: #fff;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 22px rgba(24, 119, 242, 0.28);
+}
+
+.ppc-cta-strip-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ppc-cta-strip-text h3 {
+  margin: 0 0 4px;
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.ppc-cta-strip-text p {
+  margin: 0;
+  color: var(--clr-ink-2);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.ppc-cta-strip-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--clr-primary) 0%, #0a5be0 100%);
+  color: #fff;
+  font-size: 0.94rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(24, 119, 242, 0.26);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.ppc-cta-strip-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s var(--ease);
+}
+
+.ppc-cta-strip-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(24, 119, 242, 0.32);
+  color: #fff;
+  text-decoration: none;
+}
+
+.ppc-cta-strip-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* 2. Split copy + stat CTA */
+.ppc-cta-split-section {
+  padding: 10px 0 50px;
+}
+
+
+
+.ppc-cta-split {
+  /* display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); */
+  gap: 30px;
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.07);
+}
+
+.ppc-cta-split-copy {
+  padding: 44px 44px;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ppc-cta-split-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: rgba(24, 119, 242, 0.1);
+  color: var(--clr-primary-dk);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ppc-cta-split-copy h2 {
+  margin: 0 0 14px;
+  color: #0f172a;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.ppc-cta-split-copy p {
+  margin: 0;
+  max-width: 480px;
+  color: var(--clr-ink-2);
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.ppc-cta-split-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 14px;
+  /* margin-top: 26px; */
+}
+
+.ppc-cta-split-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 44px 40px;
+  background: linear-gradient(160deg, #071326 0%, #0b1d3d 100%);
+  color: #fff;
+}
+
+.ppc-cta-split-num {
+  display: block;
+  margin-bottom: 12px;
+  font-size: clamp(2.6rem, 4vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #7dd3fc;
+}
+
+.ppc-cta-split-num small {
+  margin-left: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ppc-cta-split-stat p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+/* 3. Big spotlight CTA — dark, glowing orbs */
+.ppc-cta-spotlight {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 24px;
+  background: radial-gradient(circle at top right, rgba(24, 119, 242, 0.2), transparent 22%), #071326;
+}
+
+.ppc-cta-spotlight-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.ppc-cta-spotlight-orb-a {
+  top: -120px;
+  left: -80px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.35), transparent 70%);
+}
+
+.ppc-cta-spotlight-orb-b {
+  bottom: -140px;
+  right: -100px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(24, 119, 242, 0.32), transparent 70%);
+}
+
+.ppc-cta-spotlight-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ppc-cta-spotlight-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #93c5fd;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ppc-cta-spotlight-inner h2 {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.ppc-cta-spotlight-inner > p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.ppc-cta-spotlight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 34px 0 28px;
+}
+
+.ppc-cta-spotlight-btn {
+  gap: 10px;
+}
+
+.ppc-cta-spotlight-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.ppc-cta-spotlight-whatsapp i {
+  color: #25d366;
+  font-size: 1.1rem;
+}
+
+.ppc-cta-spotlight-whatsapp:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+}
+
+.ppc-cta-spotlight-trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 26px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ppc-cta-spotlight-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ppc-cta-spotlight-trust i {
+  color: #38bdf8;
+}
+
+/* 4. Final card CTA — before FAQ */
+.ppc-cta-final-section {
+  padding: 26px 24px;
+}
+
+.ppc-cta-final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 32px 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(24, 119, 242, 0.16);
+  background: linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+
+
+/* CTA Section */
+.ek-cta-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Blurred Background Image */
+.ek-cta-section::before {
+    content: "";
+    position: absolute;
+    inset: -30px; /* Prevent blur edges from showing */
+    background: url('https://images.unsplash.com/photo-1566321343730-237ec35e53f3?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center center / cover no-repeat;
+    filter: blur(20px);
+    transform: scale(1.1);
+    z-index: -2;
+}
+
+
+.ppc-cta-final-badge {
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(24, 119, 242, 0.2);
+  color: var(--clr-primary);
+  font-size: 1.3rem;
+  box-shadow: 0 10px 22px rgba(24, 119, 242, 0.14);
+}
+
+.ppc-cta-final-copy {
+  flex: 1;
+  min-width: 0;
+  max-width: 680px;
+}
+
+.ppc-cta-final-copy h3 {
+  margin: 0 0 4px;
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.ppc-cta-final-copy p {
+  margin: 0;
+  color: var(--clr-ink-2);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ppc-cta-final-actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.ppc-cta-final-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--clr-primary-dk);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ppc-cta-final-call:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .ppc-cta-split {
+    grid-template-columns: 1fr;
+  }
+
+  .ppc-cta-split-stat {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 820px) {
+  .ppc-cta-strip {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .ppc-cta-strip-text {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .ppc-cta-strip-btn {
+    margin: 0 auto;
+  }
+
+  .ppc-cta-split-copy,
+  .ppc-cta-split-stat {
+    padding: 32px 26px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .ppc-cta-split-copy p {
+    margin: 0 auto;
+  }
+
+  .ppc-cta-split-actions {
+    justify-content: center;
+  }
+
+  .ppc-cta-spotlight {
+    padding: 64px 20px;
+  }
+
+  .ppc-cta-final {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ppc-cta-final-actions {
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .ppc-cta-strip {
+    padding: 22px 20px;
+  }
+
+  .ppc-cta-final {
+    padding: 26px 22px;
   }
 }
