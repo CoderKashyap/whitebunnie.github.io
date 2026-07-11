@@ -493,8 +493,9 @@ h2.h-main em {
 .nav-menu {
   display: flex;
   align-items: center;
+  justify-content: center;
   list-style: none;
-  gap: 2px;
+  gap: 30px;
   flex: 1;
 }
 
