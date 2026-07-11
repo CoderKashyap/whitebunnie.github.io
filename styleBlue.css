@@ -280,7 +280,7 @@ h2.h-main em {
 /* ══════════════════════════════════════════════════════════
    1. NAVBAR
 ══════════════════════════════════════════════════════════ */
-.navbar {
+/* .navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -370,7 +370,6 @@ h2.h-main em {
   padding: 9px 20px !important;
 }
 
-/* ── Mega menu ── */
 .has-mega {
   position: static;
 }
@@ -383,8 +382,8 @@ h2.h-main em {
   background: #fff;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   opacity: 0;
-  visibility: hidden;
   transform: translateY(-10px);
+  visibility: hidden;
   transition: opacity .22s, visibility .22s, transform .22s;
   z-index: 999;
 }
@@ -395,13 +394,14 @@ h2.h-main em {
   transform: translateY(0);
 }
 
+
 .mega-inner {
   max-width: 1240px;
   margin: 0 auto;
   padding: 32px 36px 28px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0 40px;
+  gap: 0 28px;
 }
 
 .mega-col-header {
@@ -455,7 +455,6 @@ h2.h-main em {
   color: var(--clr-ink-3);
 }
 
-/* ── Mega CTA strip ── */
 .mega-cta-strip {
   max-width: 1240px;
   margin: 0 auto;
@@ -501,7 +500,6 @@ h2.h-main em {
   text-decoration: none;
 }
 
-/* ── Industries dropdown ── */
 .has-dropdown {
   position: relative;
 }
@@ -552,7 +550,7 @@ h2.h-main em {
   color: var(--clr-ink);
 }
 
-/* ── Mobile toggle ── */
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -588,7 +586,7 @@ h2.h-main em {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ── Dark bg navbar variant ── */
+
 .navbar.nav-on-dark .nav-wrap {
   background: rgba(8, 12, 28, 0.4);
   border-color: rgba(255, 255, 255, 0.12);
@@ -617,7 +615,7 @@ h2.h-main em {
   background: rgba(255, 255, 255, 0.88);
 }
 
-/* ── Navbar responsive ── */
+
 @media (max-width: 980px) {
   .nav-wrap {
     margin: 0;
@@ -719,7 +717,7 @@ h2.h-main em {
   .nav-logo img {
     height: 30px;
   }
-}
+} */
 
 /* ══════════════════════════════════════════════════════════
    2. HERO

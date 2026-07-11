@@ -20,217 +20,267 @@
 
 
 <style>
-	
-  /* ════════════════════════════════════
+	/* ════════════════════════════════════
      STATS SECTION
   ════════════════════════════════════ */
-  
-   .stats-section{
-    position:relative;
-    isolation:isolate;
-    background:var(--clr-dark-bg);
-    padding:clamp(72px,5vw,128px) 24px;
-    overflow:hidden;
-  }
-  /* blurred background image + dark overlay */
-  .stats-section::before{
-    content:"";
-    position:absolute;
-    inset:-40px;                 /* bleed past edges so blur has no soft border */
-    z-index:-2;
-    background:
-      var(--stats-bg) center/cover no-repeat;
-    filter:blur(6px) saturate(.9);
-    transform:scale(1.06);       /* hide blur edge bleed */
-  }
-  /* ambient blue glow — sits above image, below content */
-  .stats-section::after{
-    content:"";
-    position:absolute;
-    top:-20%;left:50%;
-    z-index:-1;
-    width:min(900px,90%);
-    height:520px;
-    transform:translateX(-50%);
-    background:radial-gradient(ellipse at center,
-      rgba(58,108,240,.22) 0%,
-      rgba(58,108,240,.06) 40%,
-      transparent 70%);
-    pointer-events:none;
-  }
- 
-  
 
-  /* .stats-section{ --stats-bg:url('https://images.unsplash.com/photo-1572423589021-a294e9ef8b85?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); } */
-  .stats-section{ --stats-bg:url('https://images.unsplash.com/photo-1712111878737-c1d644970d1a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); }
- 
-  .stats-wrap{position:relative;max-width:var(--wrap-max);margin:0 auto;}
- 
-  /* eyebrow */
-  .stats-eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:7px 14px;
-    margin-bottom:clamp(36px,4.5vw,56px);
-    border:1px solid var(--stat-card-border);
-    border-radius:100px;
-    background:rgba(255,255,255,.02);
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--stat-text-soft);
-  }
-  .stats-eyebrow::before{
-    content:"";
-    width:6px;height:6px;border-radius:50%;
-    background:var(--clr-primary);
-    box-shadow:0 0 0 4px rgba(24,119,242,.20);
-  }
- 
-  /* grid */
-  .stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-  }
- 
-  .stat-card{
-    position:relative;
-    padding:30px 28px 34px;
-    border:1px solid var(--stat-card-border);
-    border-radius: 8px;
-    /* border-radius:var(--r-lg); */
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)),
-      var(--stat-card-bg);
-    transition:transform .5s var(--ease), border-color .3s ease, box-shadow .5s var(--ease);
-  }
-  .stat-card::after{
-    content:"";
-    position:absolute;inset:0;
-    border-radius:inherit;
-    padding:1px;
-    background:linear-gradient(180deg, rgba(127,180,255,.35), transparent 60%);
-    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;
-            mask-composite:exclude;
-    opacity:0;
-    transition:opacity .4s ease;
-    pointer-events:none;
-  }
-  .stat-card:hover{
-    transform:translateY(-4px);
-    border-color:rgba(80,140,255,.4);
-    box-shadow:0 20px 50px rgba(8,14,40,.6);
-  }
-  .stat-card:hover::after{opacity:1;}
- 
-  .stat-number{
-    display:block;
-    font-size:clamp(44px,5vw,64px);
-    font-weight:800;
-    line-height:1;
-    letter-spacing:-.03em;
-    margin-bottom:18px;
-    font-variant-numeric:tabular-nums;
-    background:linear-gradient(135deg, var(--stat-grad-from), var(--stat-grad-to));
-    -webkit-background-clip:text;
-            background-clip:text;
-    -webkit-text-fill-color:transparent;
-    color:var(--stat-grad-from); /* fallback */
-  }
-  .stat-number .unit{opacity:.8;}
- 
-  .stat-card p{
-    font-size:14px;
-    line-height:1.6;
-    color:var(--stat-text-soft);
-  }
- 
-  /* ════════════════════════════════════
+	.stats-section {
+		position: relative;
+		isolation: isolate;
+		background: var(--clr-dark-bg);
+		padding: clamp(72px, 5vw, 128px) 24px;
+		overflow: hidden;
+	}
+
+	/* blurred background image + dark overlay */
+	.stats-section::before {
+		content: "";
+		position: absolute;
+		inset: -40px;
+		/* bleed past edges so blur has no soft border */
+		z-index: -2;
+		background:
+			var(--stats-bg) center/cover no-repeat;
+		filter: blur(6px) saturate(.9);
+		transform: scale(1.06);
+		/* hide blur edge bleed */
+	}
+
+	/* ambient blue glow — sits above image, below content */
+	.stats-section::after {
+		content: "";
+		position: absolute;
+		top: -20%;
+		left: 50%;
+		z-index: -1;
+		width: min(900px, 90%);
+		height: 520px;
+		transform: translateX(-50%);
+		background: radial-gradient(ellipse at center,
+				rgba(58, 108, 240, .22) 0%,
+				rgba(58, 108, 240, .06) 40%,
+				transparent 70%);
+		pointer-events: none;
+	}
+
+
+
+	/* .stats-section{ --stats-bg:url('https://images.unsplash.com/photo-1572423589021-a294e9ef8b85?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); } */
+	.stats-section {
+		--stats-bg: url('https://images.unsplash.com/photo-1712111878737-c1d644970d1a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+	}
+
+	.stats-wrap {
+		position: relative;
+		max-width: var(--wrap-max);
+		margin: 0 auto;
+	}
+
+	/* eyebrow */
+	.stats-eyebrow {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 7px 14px;
+		margin-bottom: clamp(36px, 4.5vw, 56px);
+		border: 1px solid var(--stat-card-border);
+		border-radius: 100px;
+		background: rgba(255, 255, 255, .02);
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: .14em;
+		text-transform: uppercase;
+		color: var(--stat-text-soft);
+	}
+
+	.stats-eyebrow::before {
+		content: "";
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: var(--clr-primary);
+		box-shadow: 0 0 0 4px rgba(24, 119, 242, .20);
+	}
+
+	/* grid */
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 18px;
+	}
+
+	.stat-card {
+		position: relative;
+		padding: 30px 28px 34px;
+		border: 1px solid var(--stat-card-border);
+		border-radius: 8px;
+		/* border-radius:var(--r-lg); */
+		background:
+			linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0)),
+			var(--stat-card-bg);
+		transition: transform .5s var(--ease), border-color .3s ease, box-shadow .5s var(--ease);
+	}
+
+	.stat-card::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		padding: 1px;
+		background: linear-gradient(180deg, rgba(127, 180, 255, .35), transparent 60%);
+		-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		opacity: 0;
+		transition: opacity .4s ease;
+		pointer-events: none;
+	}
+
+	.stat-card:hover {
+		transform: translateY(-4px);
+		border-color: rgba(80, 140, 255, .4);
+		box-shadow: 0 20px 50px rgba(8, 14, 40, .6);
+	}
+
+	.stat-card:hover::after {
+		opacity: 1;
+	}
+
+	.stat-number {
+		display: block;
+		font-size: clamp(44px, 5vw, 64px);
+		font-weight: 800;
+		line-height: 1;
+		letter-spacing: -.03em;
+		margin-bottom: 18px;
+		font-variant-numeric: tabular-nums;
+		background: linear-gradient(135deg, var(--stat-grad-from), var(--stat-grad-to));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: var(--stat-grad-from);
+		/* fallback */
+	}
+
+	.stat-number .unit {
+		opacity: .8;
+	}
+
+	.stat-card p {
+		font-size: 14px;
+		line-height: 1.6;
+		color: var(--stat-text-soft);
+	}
+
+	/* ════════════════════════════════════
      CASE STUDY TABS
   ════════════════════════════════════ */
-  .stats-tabs{
-    margin-top:clamp(48px,6vw,40px);
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:10px;
-  }
- 
-  .tab{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-    padding:18px 18px 20px;
-    text-decoration:none;
-    border:1px solid var(--stat-card-border);
-    border-radius: 8px;
-    /* border-radius:var(--r-md); */
-    /* background:rgba(255,255,255,.015); */
-    transition:background .3s ease, border-color .3s ease, transform .4s var(--ease);
+	.stats-tabs {
+		margin-top: clamp(48px, 6vw, 40px);
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 10px;
+	}
+
+	.tab {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 9px;
+		padding: 18px 18px 20px;
+		text-decoration: none;
+		border: 1px solid var(--stat-card-border);
+		border-radius: 8px;
+		/* border-radius:var(--r-md); */
+		/* background:rgba(255,255,255,.015); */
+		transition: background .3s ease, border-color .3s ease, transform .4s var(--ease);
 
 
-	background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0)), var(--stat-card-bg);
+		background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0)), var(--stat-card-bg);
 
-  }
-  .tab::before{
-    content:"";
-    position:absolute;left:18px;top:0;
-    width:26px;height:2px;border-radius:2px;
-    background:linear-gradient(90deg, var(--stat-grad-from), var(--stat-grad-to));
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform .35s var(--ease);
-  }
-  .tab:hover{
-    /* background:rgba(255,255,255,.04); */
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), var(--stat-card-bg);
-    border-color:rgba(80,140,255,.4);
-    transform:translateY(-2px);
-  }
-  .tab:hover::before,
-  .tab:focus-visible::before,
-  .tab.active::before{transform:scaleX(1);}
- 
-  .tab:focus-visible{
-    outline:2px solid var(--clr-primary);
-    outline-offset:2px;
-  }
- 
-  .tab.active{
-    /* background:var(--stat-tab-active); */
-	background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0)), var(--stat-card-bg);
-    border-color:rgba(99,138,255,.5);
-  }
- 
-  .tab-title{
-    font-size:14px;
-    font-weight:700;
-    line-height:1.3;
-    color:var(--stat-text-main);
-  }
-  .tab-meta{
-    font-size:12px;
-    line-height:1.45;
-    color:var(--stat-text-soft);
-  }
-  .tab.active .tab-meta{color:#c7d3ee;}
- 
-  /* ────────────── responsive ────────────── */
-  @media (max-width:900px){
-    .stats-grid{grid-template-columns:repeat(2,1fr);}
-    .stats-tabs{grid-template-columns:repeat(2,1fr);}
-  }
-  @media (max-width:560px){
-    .stats-grid{grid-template-columns:1fr;}
-    .stats-tabs{grid-template-columns:1fr;}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{transition:none!important;}
-  }
+	}
+
+	.tab::before {
+		content: "";
+		position: absolute;
+		left: 18px;
+		top: 0;
+		width: 26px;
+		height: 2px;
+		border-radius: 2px;
+		background: linear-gradient(90deg, var(--stat-grad-from), var(--stat-grad-to));
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform .35s var(--ease);
+	}
+
+	.tab:hover {
+		/* background:rgba(255,255,255,.04); */
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), var(--stat-card-bg);
+		border-color: rgba(80, 140, 255, .4);
+		transform: translateY(-2px);
+	}
+
+	.tab:hover::before,
+	.tab:focus-visible::before,
+	.tab.active::before {
+		transform: scaleX(1);
+	}
+
+	.tab:focus-visible {
+		outline: 2px solid var(--clr-primary);
+		outline-offset: 2px;
+	}
+
+	.tab.active {
+		/* background:var(--stat-tab-active); */
+		background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0)), var(--stat-card-bg);
+		border-color: rgba(99, 138, 255, .5);
+	}
+
+	.tab-title {
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 1.3;
+		color: var(--stat-text-main);
+	}
+
+	.tab-meta {
+		font-size: 12px;
+		line-height: 1.45;
+		color: var(--stat-text-soft);
+	}
+
+	.tab.active .tab-meta {
+		color: #c7d3ee;
+	}
+
+	/* ────────────── responsive ────────────── */
+	@media (max-width:900px) {
+		.stats-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.stats-tabs {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width:560px) {
+		.stats-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.stats-tabs {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (prefers-reduced-motion:reduce) {
+		* {
+			transition: none !important;
+		}
+	}
 </style>
 
 <body>
@@ -263,12 +313,13 @@
 					</a>
 
 					<div class="mega-menu">
+						<div class="mega-panel">
 						<div class="mega-inner">
 
 							<div class="mega-col">
 								<p class="mega-col-header">SEO & Visibility</p>
 								<a href="#" class="mega-item">
-
+									<div class="mega-item-icon"><i class="fa-solid fa-brain"></i></div>
 									<div class="mega-item-text"><strong>AI SEO</strong><span>AI-powered search
 											visibility</span></div>
 								</a>
@@ -361,6 +412,31 @@
 								</a>
 							</div>
 
+							
+							<div class="mega-col">
+								<p class="mega-col-header">Tech &amp; Design</p>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-code"></i></div>
+									<div class="mega-item-text"><strong>Web Development</strong><span>Custom &amp;
+											e-commerce websites</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+									<div class="mega-item-text"><strong>UI/UX Design</strong><span>Wireframes,
+											prototypes</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-laptop"></i></div>
+									<div class="mega-item-text"><strong>Landing Pages</strong><span>High-converting page
+											experiences</span></div>
+								</a>
+								<a href="#" class="mega-item">
+									<div class="mega-item-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+									<div class="mega-item-text"><strong>CRO</strong><span>Conversion rate
+											optimization</span></div>
+								</a>
+							</div>
+
 						</div>
 
 						<div class="mega-cta-strip">
@@ -370,6 +446,7 @@
 								</p>
 							</div>
 							<a href="#contact" class="mega-cta-btn">Get in Touch</a>
+						</div>
 						</div>
 					</div>
 				</li>
@@ -383,14 +460,16 @@
 							<polyline points="6 9 12 15 18 9" />
 						</svg>
 					</a>
-					<ul class="nav-dropdown">
-						<li><a href="#"><i class="fa-solid fa-heart-pulse"></i> Healthcare</a></li>
-						<li><a href="#"><i class="fa-solid fa-building"></i> Real Estate</a></li>
-						<li><a href="#"><i class="fa-solid fa-bag-shopping"></i> E-commerce</a></li>
-						<li><a href="#"><i class="fa-solid fa-microchip"></i> SaaS &amp; Tech</a></li>
-						<li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-						<li><a href="#"><i class="fa-solid fa-coins"></i> Finance</a></li>
-					</ul>
+					<div class="nav-dropdown">
+						<ul class="dropdown-panel">
+							<li><a href="#"><i class="fa-solid fa-heart-pulse"></i> Healthcare</a></li>
+							<li><a href="#"><i class="fa-solid fa-building"></i> Real Estate</a></li>
+							<li><a href="#"><i class="fa-solid fa-bag-shopping"></i> E-commerce</a></li>
+							<li><a href="#"><i class="fa-solid fa-microchip"></i> SaaS &amp; Tech</a></li>
+							<li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+							<li><a href="#"><i class="fa-solid fa-coins"></i> Finance</a></li>
+						</ul>
+					</div>
 				</li>
 
 				<li class="nav-item"><a href="#" class="nav-link">About</a></li>
@@ -408,6 +487,8 @@
 			</div>
 
 		</div>
+
+		<div class="nav-overlay" aria-hidden="true"></div>
 	</nav>
 
 
@@ -556,95 +637,95 @@
 
 
 
-  <!-- ════════════════════════════════════
+	<!-- ════════════════════════════════════
     STATS SECTION
   ════════════════════════════════════ -->
-  <section class="stats-section" data-nav-theme="dark">
-    <div class="stats-wrap">
- 
-      <!-- <div class="stats-eyebrow">Proven in numbers</div> -->
- 
-      <div class="stats-grid">
-        <article class="stat-card">
-          <span class="stat-number" data-value="35" data-suffix="+">0<span class="unit">+</span></span>
-          <p>Years of combined team expertise in B2B marketing.</p>
-        </article>
- 
-        <article class="stat-card">
-          <span class="stat-number" data-value="8" data-suffix="+">0<span class="unit">+</span></span>
-          <p>Years optimizing clients' digital presence for AI search engines and assistants.</p>
-        </article>
- 
-        <article class="stat-card">
-          <span class="stat-number" data-value="174" data-suffix="%">0<span class="unit">%</span></span>
-          <p>Average increase in marketing qualified leads from AI-optimized campaigns.</p>
-        </article>
- 
-        <article class="stat-card">
-          <span class="stat-number" data-value="28" data-suffix="%">0<span class="unit">%</span></span>
-          <p>Of client revenue, on average, attributable to leads sourced from AI platforms.</p>
-        </article>
-      </div>
- 
-      <nav class="stats-tabs" aria-label="Client case studies">
-        <a href="https://whitebunnie.com/case-study/nimble-crm-2/" class="tab" data-tab="1">
-          <span class="tab-title">Nimble CRM</span>
-          <span class="tab-meta">+68% Organic Traffic, +45% Leads</span>
-        </a>
- 
-        <a href="https://whitebunnie.com/case-study/dwlc/" class="tab" data-tab="2">
-          <span class="tab-title">Doctor Weight Loss Center</span>
-          <span class="tab-meta">+180% Appointment Bookings</span>
-        </a>
- 
-        <a href="https://whitebunnie.com/case-study/nri-remittance/" class="tab active" data-tab="3">
-          <span class="tab-title">NRI Remittance</span>
-          <span class="tab-meta">+113% Clicks, Page 1 Rankings</span>
-        </a>
- 
-        <a href="https://whitebunnie.com/case-study/ag-com-llc/" class="tab" data-tab="4">
-          <span class="tab-title">AG Com LLC</span>
-          <span class="tab-meta">+2,678% Organic Traffic Growth</span>
-        </a>
- 
-        <a href="https://whitebunnie.com/case-study/mn-brow-lash-academy/" class="tab" data-tab="5">
-          <span class="tab-title">MN Brow &amp; Lash Academy</span>
-          <span class="tab-meta">+157% Organic Click Growth</span>
-        </a>
-      </nav>
- 
-    </div>
-  </section>
- 
-  <script>
-    // Count-up on scroll — respects reduced-motion
-    (function(){
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var nums = document.querySelectorAll('.stat-number');
-      function render(el,val,suffix){el.innerHTML=val+'<span class="unit">'+suffix+'</span>';}
-      function animate(el){
-        var target=+el.dataset.value, suffix=el.dataset.suffix||'';
-        if(reduce){render(el,target,suffix);return;}
-        var start=null, dur=1400;
-        function step(ts){
-          if(!start)start=ts;
-          var p=Math.min((ts-start)/dur,1);
-          var eased=1-Math.pow(1-p,3);
-          render(el,Math.round(target*eased),suffix);
-          if(p<1)requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
-      if('IntersectionObserver' in window){
-        var io=new IntersectionObserver(function(entries){
-          entries.forEach(function(e){if(e.isIntersecting){animate(e.target);io.unobserve(e.target);}});
-        },{threshold:.4});
-        nums.forEach(function(n){io.observe(n);});
-      }else{
-        nums.forEach(function(n){render(n,+n.dataset.value,n.dataset.suffix||'');});
-      }
-    })();
-  </script>
+	<section class="stats-section" data-nav-theme="dark">
+		<div class="stats-wrap">
+
+			<!-- <div class="stats-eyebrow">Proven in numbers</div> -->
+
+			<div class="stats-grid">
+				<article class="stat-card">
+					<span class="stat-number" data-value="35" data-suffix="+">0<span class="unit">+</span></span>
+					<p>Years of combined team expertise in B2B marketing.</p>
+				</article>
+
+				<article class="stat-card">
+					<span class="stat-number" data-value="8" data-suffix="+">0<span class="unit">+</span></span>
+					<p>Years optimizing clients' digital presence for AI search engines and assistants.</p>
+				</article>
+
+				<article class="stat-card">
+					<span class="stat-number" data-value="174" data-suffix="%">0<span class="unit">%</span></span>
+					<p>Average increase in marketing qualified leads from AI-optimized campaigns.</p>
+				</article>
+
+				<article class="stat-card">
+					<span class="stat-number" data-value="28" data-suffix="%">0<span class="unit">%</span></span>
+					<p>Of client revenue, on average, attributable to leads sourced from AI platforms.</p>
+				</article>
+			</div>
+
+			<nav class="stats-tabs" aria-label="Client case studies">
+				<a href="https://whitebunnie.com/case-study/nimble-crm-2/" class="tab" data-tab="1">
+					<span class="tab-title">Nimble CRM</span>
+					<span class="tab-meta">+68% Organic Traffic, +45% Leads</span>
+				</a>
+
+				<a href="https://whitebunnie.com/case-study/dwlc/" class="tab" data-tab="2">
+					<span class="tab-title">Doctor Weight Loss Center</span>
+					<span class="tab-meta">+180% Appointment Bookings</span>
+				</a>
+
+				<a href="https://whitebunnie.com/case-study/nri-remittance/" class="tab active" data-tab="3">
+					<span class="tab-title">NRI Remittance</span>
+					<span class="tab-meta">+113% Clicks, Page 1 Rankings</span>
+				</a>
+
+				<a href="https://whitebunnie.com/case-study/ag-com-llc/" class="tab" data-tab="4">
+					<span class="tab-title">AG Com LLC</span>
+					<span class="tab-meta">+2,678% Organic Traffic Growth</span>
+				</a>
+
+				<a href="https://whitebunnie.com/case-study/mn-brow-lash-academy/" class="tab" data-tab="5">
+					<span class="tab-title">MN Brow &amp; Lash Academy</span>
+					<span class="tab-meta">+157% Organic Click Growth</span>
+				</a>
+			</nav>
+
+		</div>
+	</section>
+
+	<script>
+		// Count-up on scroll — respects reduced-motion
+		(function () {
+			var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			var nums = document.querySelectorAll('.stat-number');
+			function render(el, val, suffix) { el.innerHTML = val + '<span class="unit">' + suffix + '</span>'; }
+			function animate(el) {
+				var target = +el.dataset.value, suffix = el.dataset.suffix || '';
+				if (reduce) { render(el, target, suffix); return; }
+				var start = null, dur = 1400;
+				function step(ts) {
+					if (!start) start = ts;
+					var p = Math.min((ts - start) / dur, 1);
+					var eased = 1 - Math.pow(1 - p, 3);
+					render(el, Math.round(target * eased), suffix);
+					if (p < 1) requestAnimationFrame(step);
+				}
+				requestAnimationFrame(step);
+			}
+			if ('IntersectionObserver' in window) {
+				var io = new IntersectionObserver(function (entries) {
+					entries.forEach(function (e) { if (e.isIntersecting) { animate(e.target); io.unobserve(e.target); } });
+				}, { threshold: .4 });
+				nums.forEach(function (n) { io.observe(n); });
+			} else {
+				nums.forEach(function (n) { render(n, +n.dataset.value, n.dataset.suffix || ''); });
+			}
+		})();
+	</script>
 
 
 
@@ -947,7 +1028,7 @@
 
 
 
-<!-- ════════════════════════════════════
+	<!-- ════════════════════════════════════
   CTA BANNER
 ════════════════════════════════════ -->
 	<section class="cta-banner" data-nav-theme="dark">
@@ -1842,7 +1923,8 @@
 								<video src="./video/cheng.mp4" autoplay muted loop playsinline></video>
 							</div>
 							<div class="cs-body">
-								<p class="cs-review-quote">"Impressive team, fast execution, and growth-driven strategies delivering exceptional content consistently."</p>
+								<p class="cs-review-quote">"Impressive team, fast execution, and growth-driven
+									strategies delivering exceptional content consistently."</p>
 								<div class="cs-reviewer">
 									<span class="cs-reviewer-name">Randy Cheng</span>
 									<span class="cs-reviewer-desig">Founder &amp; CEO, Collab Management Group</span>
@@ -1854,7 +1936,8 @@
 								<video src="./video/seth.mp4" autoplay muted loop playsinline></video>
 							</div>
 							<div class="cs-body">
-								<p class="cs-review-quote">"Exceptional dedication, attentiveness, and productivity make WhiteBunnie a reliable growth partner."</p>
+								<p class="cs-review-quote">"Exceptional dedication, attentiveness, and productivity make
+									WhiteBunnie a reliable growth partner."</p>
 								<div class="cs-reviewer">
 									<span class="cs-reviewer-name">Seth Kleinman</span>
 									<span class="cs-reviewer-desig">Co-Founder, Go Remote Cr</span>
@@ -1866,7 +1949,8 @@
 								<video src="./video/Christina.mp4" autoplay muted loop playsinline></video>
 							</div>
 							<div class="cs-body">
-								<p class="cs-review-quote">"Their team invested deeply in our growth. The performance was beyond what we expected."</p>
+								<p class="cs-review-quote">"Their team invested deeply in our growth. The performance
+									was beyond what we expected."</p>
 								<div class="cs-reviewer">
 									<span class="cs-reviewer-name">Christina</span>
 									<span class="cs-reviewer-desig">Co-Founder, Segwise.ai</span>
@@ -1880,7 +1964,8 @@
 								<video src="./newHome/Testimonial.mp4" autoplay muted loop playsinline></video>
 							</div>
 							<div class="cs-body">
-								<p class="cs-review-quote">"Consistently delivering returns while saving our time. That's White Bunnie for you."</p>
+								<p class="cs-review-quote">"Consistently delivering returns while saving our time.
+									That's White Bunnie for you."</p>
 								<div class="cs-reviewer">
 									<span class="cs-reviewer-name">Adarsh Menon</span>
 									<span class="cs-reviewer-desig">Partner, Fireside Ventures | ex-CXO, Flipkart</span>
@@ -3133,7 +3218,7 @@
 
 
 
-	<!-- 
+<!-- 
 
 	<section class="stats-section" data-nav-theme="dark">
 

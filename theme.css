@@ -448,6 +448,7 @@ h2.h-main em {
 }
 
 .nav-wrap {
+  position: relative;
   max-width: 1220px;
   margin: 10px auto;
   border-radius: var(--r);
@@ -455,6 +456,20 @@ h2.h-main em {
   display: flex;
   align-items: center;
   height: 70px;
+}
+
+/* Frosted-glass background lives on a pseudo-element (rather than directly on
+   .nav-wrap) so .nav-wrap itself never establishes a containing block for
+   fixed-position descendants (backdrop-filter/transform do that). This lets
+   the position:fixed .mega-menu span the full viewport instead of being
+   clipped to the navbar's own max-width. */
+.nav-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   background: rgba(255, 255, 255, 0.12);
@@ -536,11 +551,17 @@ h2.h-main em {
 
 .mega-menu {
   position: fixed;
-  top: 70px;
+  top: 80px;
+  /* = navbar's own bottom edge (10px top margin + 70px height), so this box
+     never overlaps the navbar itself. */
   left: 0;
   right: 0;
-  background: #fff;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  max-width: 1410px;
+  margin: auto;
+  padding-top: 14px;
+  /* invisible bridge: the mouse stays "inside" .mega-menu while crossing this
+     gap, so .has-mega:hover never breaks even though there's a visible gap
+     before the white panel starts. */
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -554,13 +575,19 @@ h2.h-main em {
   transform: translateY(0);
 }
 
+.mega-panel {
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border-radius: var(--r);
+}
+
 .mega-inner {
-  max-width: 1240px;
+  max-width: 1410px;
   margin: 0 auto;
-  padding: 32px 36px 28px;
+  padding: 32px 22px 28px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0 40px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 22px;
 }
 
 .mega-col-header {
@@ -667,14 +694,12 @@ h2.h-main em {
 
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   left: 0;
-  background: #fff;
-  border-radius: var(--r);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  min-width: 200px;
-  padding: 8px;
+  padding-top: 28px;
+  /* invisible bridge down to the navbar's bottom edge (+14px visual gap,
+     matching the mega-menu) — keeps hover alive while crossing the gap since
+     it's still part of this box, not a dead zone. */
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
@@ -686,6 +711,15 @@ h2.h-main em {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+.dropdown-panel {
+  background: #fff;
+  border-radius: var(--r);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  min-width: 200px;
+  padding: 8px;
 }
 
 .nav-dropdown li a {
@@ -709,6 +743,32 @@ h2.h-main em {
 .nav-dropdown li a:hover {
   background: #f3f4f6;
   color: var(--clr-ink);
+}
+
+/* ── Backdrop blur behind open dropdowns ── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  /* covers the full viewport, including behind the navbar itself, so the
+     navbar's own frosted-glass background picks up the same dim/blur as the
+     rest of the page instead of looking like a plain cut-out. */
+  background: rgba(10, 14, 26, 0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+  z-index: -2;
+  /* stays behind .nav-wrap::before (-1) and the navbar's own content (auto),
+     so navbar text/links/logo stay crisp on top — but the whole .navbar
+     element is already elevated above normal page content via its own
+     z-index:1000, so this still sits above everything outside the navbar. */
+  pointer-events: none;
+}
+
+.navbar:has(.has-mega:hover, .has-dropdown:hover) .nav-overlay {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ── Mobile toggle ── */
@@ -748,7 +808,7 @@ h2.h-main em {
 }
 
 /* ── Dark bg navbar variant ── */
-.navbar.nav-on-dark .nav-wrap {
+.navbar.nav-on-dark .nav-wrap::before {
   background: rgba(8, 12, 28, 0.4);
   border-color: rgba(255, 255, 255, 0.12);
 }
@@ -791,7 +851,7 @@ h2.h-main em {
     gap: 0;
   }
 
-  .navbar.menu-open .nav-wrap {
+  .navbar.menu-open .nav-wrap::before {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
@@ -834,6 +894,8 @@ h2.h-main em {
     opacity: 1;
     visibility: visible;
     transform: none;
+    padding-top: 0;
+    max-width: none;
     box-shadow: none;
     border: none;
     background: #f6f7fc;
@@ -843,6 +905,12 @@ h2.h-main em {
 
   .has-mega.open .mega-menu {
     display: block;
+  }
+
+  .mega-panel {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
   }
 
   .mega-inner {
@@ -856,7 +924,7 @@ h2.h-main em {
     opacity: 1;
     visibility: visible;
     transform: none;
-    box-shadow: none;
+    padding-top: 0;
     display: none;
   }
 
@@ -864,8 +932,16 @@ h2.h-main em {
     display: block;
   }
 
+  .dropdown-panel {
+    box-shadow: none;
+  }
+
   .mega-cta-strip {
     flex-direction: column;
+  }
+
+  .nav-overlay {
+    display: none;
   }
 }
 
