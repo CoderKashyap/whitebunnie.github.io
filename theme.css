@@ -499,6 +499,12 @@ h2.h-main em {
   flex: 1;
 }
 
+.truncate-1-line {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .nav-link {
   display: flex;
   align-items: center;
