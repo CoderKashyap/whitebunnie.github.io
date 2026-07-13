@@ -43,6 +43,21 @@ document.querySelectorAll('.has-mega > .nav-link, .has-dropdown > .nav-link').fo
     });
 });
 
+// Services mega menu — sidebar tab switching
+function activateMegaTab(tab) {
+    const target = tab.dataset.tab;
+    document.querySelectorAll('.mega-tab').forEach(t => t.classList.toggle('is-active', t === tab));
+    document.querySelectorAll('.mega-content-panel').forEach(p => p.classList.toggle('is-active', p.dataset.panel === target));
+}
+
+document.querySelectorAll('.mega-tab').forEach(tab => {
+    tab.addEventListener('mouseenter', () => activateMegaTab(tab));
+    tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        activateMegaTab(tab);
+    });
+});
+
 // Stats tabs highlight on click
 document.querySelectorAll('.stats-tabs .tab').forEach(tab => {
     tab.addEventListener('click', (e) => {

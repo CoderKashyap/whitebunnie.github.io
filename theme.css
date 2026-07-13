@@ -563,7 +563,10 @@ h2.h-main em {
      never overlaps the navbar itself. */
   left: 0;
   right: 0;
-  max-width: 1410px;
+  max-width: 1180px;
+  /* left/right:0 + margin:auto means this box is always min(900px, 100vw) —
+     it can never be wider than the viewport, so it can never force a
+     horizontal scrollbar no matter how narrow the browser window is. */
   margin: auto;
   padding-top: 14px;
   /* invisible bridge: the mouse stays "inside" .mega-menu while crossing this
@@ -584,85 +587,183 @@ h2.h-main em {
 
 .mega-panel {
   background: #fff;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-  border-radius: var(--r);
-}
-
-.mega-inner {
-  max-width: 1410px;
-  margin: 0 auto;
-  padding: 32px 22px 28px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0 22px;
-}
-
-.mega-col-header {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--clr-ink-4);
-  margin-bottom: 10px;
-  padding-left: 10px;
-}
-
-.mega-item {
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.09);
+  border-radius: var(--r-md);
+  /* keeps the panel from ever running off the bottom of short viewports —
+     it scrolls internally instead of being clipped by the browser edge. */
+  max-height: calc(100vh - 108px);
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  padding: 9px 10px;
-  border-radius: var(--r);
-  transition: background .16s;
-  text-decoration: none;
-  margin-bottom: 2px;
+  flex-direction: column;
 }
 
-.mega-item:hover {
-  background: #f3f4f6;
-  text-decoration: none;
+.mega-panel::-webkit-scrollbar {
+  width: 8px;
 }
 
-.mega-item-icon {
-  width: 36px;
-  height: 36px;
-  background: #f3f4f6;
-  border-radius: var(--r);
+.mega-panel::-webkit-scrollbar-thumb {
+  background: var(--clr-border);
+  border-radius: 8px;
+}
+
+.mega-body {
+  display: flex;
+  align-items: stretch;
+  /* min-width/height:0 on every link in this flex chain (body → sidebar/
+     content → grid) is what actually stops the panel from ever overflowing
+     sideways — without it, flex/grid items default to a content-based
+     minimum size and can force their container wider than the viewport. */
+  min-height: 0;
+}
+
+.mega-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--clr-border);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mega-tab {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  background: transparent;
+  border-radius: var(--r);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
   color: var(--clr-ink-2);
-  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: background .16s, color .16s;
+}
+
+.mega-tab i {
+  font-size: 10px;
+  color: var(--clr-ink-4);
+  transition: transform .16s, color .16s;
   flex-shrink: 0;
 }
 
-.mega-item-text strong {
-  display: block;
-  font-size: 13.5px;
-  font-weight: 600;
+.mega-tab:hover {
+  background: var(--clr-bg-alt);
   color: var(--clr-ink);
 }
 
-.mega-item-text span {
-  font-size: 12px;
+.mega-tab.is-active {
+  background: var(--clr-primary-lt);
+  color: var(--clr-primary);
+}
+
+.mega-tab.is-active i {
+  color: var(--clr-primary);
+  transform: translateX(2px);
+}
+
+.mega-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 24px 28px;
+}
+
+.mega-content-panel {
+  display: none;
+}
+
+.mega-content-panel.is-active {
+  display: block;
+}
+
+.mega-content-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.mega-content-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--clr-primary-lt);
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.mega-content-head h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--clr-ink);
+  margin-bottom: 2px;
+}
+
+.mega-content-head p {
+  font-size: 12.5px;
   color: var(--clr-ink-3);
+}
+
+.mega-content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px 20px;
+}
+
+.mega-link {
+  display: block;
+  min-width: 0;
+  padding: 10px 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--clr-ink-2);
+  text-decoration: none;
+  border-radius: 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color .16s, background .16s;
+}
+
+.mega-link:hover {
+  color: var(--clr-primary);
+  background: var(--clr-primary-lt);
+  text-decoration: none;
 }
 
 /* ── Mega CTA strip ── */
 .mega-cta-strip {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 18px 36px;
+  flex-shrink: 0;
+  /* sticks to the bottom of .mega-panel's own scroll area, so it's always
+     reachable even if a content panel ever grows tall enough to scroll. */
+  position: sticky;
+  bottom: 0;
+  padding: 16px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  border-top: 1px solid #f3f4f6;
+  border-top: 1px solid var(--clr-border);
+  background: #fafbfc;
+  border-radius: 0 0 var(--r-md) var(--r-md);
 }
 
 .mega-cta-text strong {
   display: block;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--clr-ink);
   margin-bottom: 2px;
@@ -677,8 +778,11 @@ h2.h-main em {
 
 .mega-cta-btn {
   flex-shrink: 0;
-  padding: 9px 22px;
-  background: var(--clr-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--clr-primary);
   color: #fff;
   font-size: 13.5px;
   font-weight: 600;
@@ -689,7 +793,7 @@ h2.h-main em {
 }
 
 .mega-cta-btn:hover {
-  background: var(--clr-ink-2);
+  background: var(--clr-primary-dk);
   color: #fff;
   text-decoration: none;
 }
@@ -918,12 +1022,39 @@ h2.h-main em {
     background: transparent;
     box-shadow: none;
     border-radius: 0;
+    max-height: none;
+    overflow: visible;
   }
 
-  .mega-inner {
+  .mega-body {
+    flex-direction: column;
+  }
+
+  .mega-sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border);
+    padding: 10px;
+  }
+
+  .mega-tab {
+    width: auto;
+  }
+
+  .mega-content {
+    padding: 16px 14px;
+  }
+
+  .mega-content-grid {
     grid-template-columns: 1fr;
-    padding: 12px;
     gap: 0;
+  }
+
+  .mega-cta-strip {
+    position: static;
+    flex-direction: column;
   }
 
   .nav-dropdown {
