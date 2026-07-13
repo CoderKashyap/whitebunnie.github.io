@@ -634,12 +634,12 @@ h2.h-main em {
   justify-content: space-between;
   gap: 10px;
   width: 100%;
-  padding: 12px 14px;
+  padding: 13px 14px;
   border: none;
   background: transparent;
   border-radius: var(--r);
   font: inherit;
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--clr-ink-2);
   cursor: pointer;
@@ -647,8 +647,15 @@ h2.h-main em {
   transition: background .16s, color .16s;
 }
 
-.mega-tab i {
-  font-size: 10px;
+.mega-tab-label {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mega-tab-chevron {
+  font-size: 11px;
   color: var(--clr-ink-4);
   transition: transform .16s, color .16s;
   flex-shrink: 0;
@@ -664,7 +671,7 @@ h2.h-main em {
   color: var(--clr-primary);
 }
 
-.mega-tab.is-active i {
+.mega-tab.is-active .mega-tab-chevron {
   color: var(--clr-primary);
   transform: translateX(2px);
 }
@@ -693,55 +700,89 @@ h2.h-main em {
 }
 
 .mega-content-icon {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   border-radius: 12px;
   background: var(--clr-primary-lt);
   color: var(--clr-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: 19px;
   flex-shrink: 0;
 }
 
 .mega-content-head h4 {
-  font-size: 17px;
+  font-size: 18.5px;
   font-weight: 700;
   color: var(--clr-ink);
   margin-bottom: 2px;
 }
 
 .mega-content-head p {
-  font-size: 12.5px;
+  font-size: 13.5px;
   color: var(--clr-ink-3);
 }
 
 .mega-content-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4px 20px;
+  gap: 6px 20px;
 }
 
 .mega-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 11px;
   min-width: 0;
-  padding: 10px 8px;
-  font-size: 13.5px;
+  padding: 11px 8px;
+  font-size: 14.5px;
   font-weight: 500;
   color: var(--clr-ink-2);
   text-decoration: none;
   border-radius: 7px;
+  transition: color .16s, background .16s;
+}
+
+.mega-link-icon {
+  width: 20px;
+  font-size: 16px;
+  text-align: center;
+  color: var(--clr-ink-3);
+  flex-shrink: 0;
+  transition: color .16s;
+}
+
+.mega-link-text {
+  flex: 1 1 auto;
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: color .16s, background .16s;
+}
+
+.mega-link-arrow {
+  font-size: 11px;
+  color: var(--clr-primary);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity .16s, transform .16s;
 }
 
 .mega-link:hover {
   color: var(--clr-primary);
   background: var(--clr-primary-lt);
   text-decoration: none;
+}
+
+.mega-link:hover .mega-link-icon {
+  color: var(--clr-primary);
+}
+
+.mega-link:hover .mega-link-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* ── Mega CTA strip ── */
