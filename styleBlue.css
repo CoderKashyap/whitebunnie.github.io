@@ -169,7 +169,7 @@ a:hover {
 h2.h-main {
   font-family: var(--font);
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   background-clip: text;
   line-height: 1.15;
   letter-spacing: -.025em;
@@ -1442,7 +1442,7 @@ h2.h-main em {
 
 .cta-banner-left h2 {
   font-size: var(--fs-h2);
-  font-weight: 600;
+  font-weight: var(--fw-heading);
   color: #fff;
   line-height: 1.1;
   background: none;
@@ -2210,7 +2210,7 @@ h2.h-main em {
 
 .ai-audit-left h2 {
   font-size: var(--fs-h2);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   color: #fff;
   line-height: 1.2;
   background: none;
@@ -3264,7 +3264,7 @@ section#wb-client-strip p.section-sub {
 
 .process-num {
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   color: var(--clr-border);
   line-height: 1;
   margin-bottom: 14px;
@@ -3347,7 +3347,7 @@ section#wb-client-strip p.section-sub {
 .wb-featured-heading {
   text-align: center;
   font-size: var(--fs-section-heading);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   line-height: 1.1;
   color: #0d1452;
   margin-bottom: 15px;
@@ -4057,7 +4057,7 @@ section#wb-client-strip p.section-sub {
 
 .contact-left h2 {
   font-size: var(--fs-h2);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   margin-bottom: 16px;
   line-height: 1.15;
   color: #fff;
@@ -4343,7 +4343,7 @@ section#wb-client-strip p.section-sub {
 
 .pfc-heading {
   font-size: var(--fs-h2);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   color: #0f172a;
   line-height: 1.2;
   margin: 0;
@@ -4723,10 +4723,10 @@ section#wb-client-strip p.section-sub {
 
 .logos-title {
   font-size: var(--fs-section-heading);
-  font-weight: 600;
+  font-weight: var(--fw-heading);
   color: #111;
   /* font-size: clamp(1.1rem, 2vw, 1.5rem);
-        font-weight: 500; */
+        font-weight: var(--fw-heading); */
   color: var(--text-dark, #0d1526);
   letter-spacing: -0.2px;
   margin: 0;

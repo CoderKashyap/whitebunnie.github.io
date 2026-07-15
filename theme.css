@@ -53,9 +53,13 @@
 
   /* ── Font Sizes ── */
   --fs-hero: clamp(3rem, 8vw, 5rem);
-  --fs-section-heading: clamp(2rem, 4vw, 3.5rem);
-  --fs-h2: clamp(2rem, 2.8vw, 3rem);
+  --fs-section-heading: clamp(1.9rem, 3.6vw, 3.1rem);
+  --fs-h2: clamp(1.9rem, 2.6vw, 2.7rem);
   --fs-card-heading: 1.4rem;
+  /* Weight for every major heading (h2.h-main and the page-specific
+     heading classes that share --fs-section-heading/--fs-h2) — change
+     this one value to restyle all section headings sitewide. */
+  --fw-heading: 800;
   --fs-sub-heading: 1.25rem;
   --fs-body: 1rem;
   --fs-body-lg: 1.05rem;
@@ -326,7 +330,7 @@ a:hover {
 h2.h-main {
   font-family: var(--font);
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   background-clip: text;
   line-height: 1.15;
   letter-spacing: -.025em;
@@ -988,9 +992,11 @@ h2.h-main em {
   background: rgba(255, 255, 255, 0.88);
 }
 
+
 /* ── Navbar responsive ── */
 @media (max-width: 980px) {
   .nav-wrap {
+    background-color: white;
     margin: 0;
     border-radius: 0;
     padding: 0 16px;
@@ -1011,6 +1017,8 @@ h2.h-main em {
   .nav-menu.open {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     position: fixed;
     top: 70px;
     left: 0;
@@ -1169,7 +1177,7 @@ h2.h-main em {
 .cta-banner-left h2 {
   /* font-size: var(--fs-h2); */
   font-size: var(--fs-section-heading);
-  /* font-weight: 600; */
+  /* font-weight: var(--fw-heading); */
   color: #fff;
   line-height: 1.1;
   background: none;

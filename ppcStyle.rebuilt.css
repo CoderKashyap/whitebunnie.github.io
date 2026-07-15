@@ -329,7 +329,7 @@ body {
 .contact-left h2 {
   margin: 0 0 18px;
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   letter-spacing: -0.025em;
   color: #0f172a;
@@ -444,7 +444,7 @@ body {
   max-width: 900px;
   /* font-size: var(--fs-section-heading); */
   font-size: clamp(2rem, 4vw, 3.4rem);
-  font-weight: 700;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   letter-spacing: -0.025em;
   color: #0f172a;
@@ -795,7 +795,7 @@ body {
 .ppc-checklist-panel h2 {
   margin-bottom: 16px;
   font-size: var(--fs-h2);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   letter-spacing: -0.025em;
 }
@@ -1061,7 +1061,7 @@ body {
   margin: 0 0 14px;
   color: var(--clr-ink);
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   letter-spacing: -0.025em;
 }
@@ -1834,7 +1834,7 @@ body {
     max-width: none;
     font-size: var(--fs-section-heading);
     text-align: center;
-    font-weight: 800;
+    font-weight: var(--fw-heading);
   }
 
   .ppc-outcome-grid {
@@ -2913,8 +2913,8 @@ body {
 .ppc-cta-spotlight-inner h2 {
   margin: 0 0 18px;
   color: #fff;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 900;
+  font-size: var(--fs-section-heading);
+  font-weight: var(--fw-heading);
   line-height: 1.18;
   letter-spacing: -0.03em;
 }

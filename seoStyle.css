@@ -46,7 +46,7 @@
 .seo-title {
   color: var(--clr-ink);
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   letter-spacing: -.025em;
   margin: 0 0 20px 0;
@@ -581,7 +581,7 @@
 .metrics-main-title {
   color: var(--clr-ink);
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   letter-spacing: -.025em;
   margin: 0 0 14px 0;
@@ -774,7 +774,7 @@
 .cta-heading {
   color: var(--clr-white);
   font-size: var(--fs-h2);
-  font-weight: 700;
+  font-weight: var(--fw-heading);
   line-height: 1.25;
   margin: 0 0 20px 0;
   letter-spacing: -0.02em;
@@ -1046,7 +1046,7 @@
 .cyber-title {
   color: var(--clr-white);
   font-size: var(--fs-h2);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   line-height: 1.2;
   letter-spacing: -.025em;
   max-width: 1000px;
@@ -1316,7 +1316,7 @@
 .success-main-title {
   color: var(--clr-ink);
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   letter-spacing: -.025em;
   margin: 0 0 12px 0;
@@ -1877,7 +1877,7 @@
 .results-main-title {
   color: var(--clr-ink, #111111);
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   margin: 0 0 12px 0;
   letter-spacing: -0.03em;
@@ -2097,7 +2097,7 @@
 .services-title {
   color: #111111;
   font-size: var(--fs-section-heading);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   line-height: 1.2;
   /* letter-spacing: -0.01em; */
   margin: 0 0 16px 0;
@@ -2289,7 +2289,7 @@
 .coverage-title {
   color: #111111;
   font-size: var(--fs-section-heading);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   line-height: 1.2;
   margin: 0 0 14px 0;
   letter-spacing: -0.03em;
@@ -2498,7 +2498,7 @@
 .ethics-main-title {
   color: #111111;
   font-size: var(--fs-section-heading);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   line-height: 1.1;
   margin: 0 0 20px 0;
 }
@@ -2692,7 +2692,7 @@
 .process-main-title {
   color: #111111;
   font-size: var(--fs-section-heading);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   line-height: 1.2;
   letter-spacing: -0.03em;
   margin: 0;
@@ -2930,7 +2930,7 @@
 .grid-section-title {
   color: #ffffff;
   font-size: var(--fs-section-heading);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin: 0 0 24px 0;
@@ -3227,7 +3227,7 @@
 
 .contact-left h2 {
   font-size: var(--fs-h2);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   margin-bottom: 16px;
   line-height: 1.15;
   color: #fff;
@@ -3504,7 +3504,7 @@
 
 .pfc-heading {
   font-size: var(--fs-h2);
-  font-weight: 800;
+  font-weight: var(--fw-heading);
   color: #0f172a;
   line-height: 1.2;
   margin: 0;
@@ -3862,7 +3862,7 @@
 
 .locations-title {
   font-size: var(--fs-section-heading);
-  font-weight: 900;
+  font-weight: var(--fw-heading);
   color: var(--clr-ink);
   letter-spacing: -0.025em;
   line-height: 1.15;
