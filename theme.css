@@ -730,8 +730,8 @@ h2.h-main em {
 
 .mega-content-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 6px 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
 }
 
 .mega-link {
@@ -739,7 +739,7 @@ h2.h-main em {
   align-items: center;
   gap: 11px;
   min-width: 0;
-  padding: 11px 8px;
+  padding: 10px 8px;
   font-size: 14.5px;
   font-weight: 500;
   color: var(--clr-ink-2);
@@ -750,6 +750,7 @@ h2.h-main em {
 
 .mega-link-icon {
   width: 20px;
+  margin-top: 2px;
   font-size: 16px;
   text-align: center;
   color: var(--clr-ink-3);
@@ -760,6 +761,24 @@ h2.h-main em {
 .mega-link-text {
   flex: 1 1 auto;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mega-link-title {
+  color: var(--clr-ink-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color .16s;
+}
+
+.mega-link-desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--clr-ink-4);
+  line-height: 1.3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -781,6 +800,10 @@ h2.h-main em {
 }
 
 .mega-link:hover .mega-link-icon {
+  color: var(--clr-primary);
+}
+
+.mega-link:hover .mega-link-title {
   color: var(--clr-primary);
 }
 
@@ -1098,7 +1121,7 @@ h2.h-main em {
 
   .mega-content-grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 2px;
   }
 
   .mega-cta-strip {

@@ -674,6 +674,234 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 
+/* ── AI Ranking Demo (ai-visibility.html) — chat-window typing/reveal loop ── */
+(function () {
+	const chatwin = document.getElementById('chatwin');
+	const stage = document.querySelector('.chatdemo-stage');
+	if (!chatwin || !stage) return;
+
+	const body = document.getElementById('chatwinBody');
+	const typedEl = document.getElementById('chatwinTyped');
+	const caretEl = document.getElementById('typeCaret');
+	const logoEl = document.getElementById('chatwinLogo');
+	const nameEl = document.getElementById('chatwinName');
+	const modelEl = document.getElementById('chatwinModel');
+	const captionEl = document.getElementById('chatdemoCaption');
+	const railChips = Array.from(document.querySelectorAll('#chatdemoRail .rail-chip'));
+	const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+	const PLATFORMS = {
+		chatgpt: { name: 'ChatGPT', model: 'GPT-5', logo: 'https://whitebunnie.com/wp-content/uploads/2026/06/chatgpt.png' },
+		claude: { name: 'Claude', model: 'Claude Opus 4.5', logo: 'https://whitebunnie.com/wp-content/uploads/2026/06/Claude_AI_symbol.svg_.png' },
+		gemini: { name: 'Gemini', model: 'Gemini 3 Pro', logo: 'https://whitebunnie.com/wp-content/uploads/2026/06/Google-gemini-icon.svg_.png' },
+		perplexity: { name: 'Perplexity', model: 'Sonar Pro', logo: 'https://whitebunnie.com/wp-content/uploads/2026/06/perplexity-ai-icon-black-logo.png' }
+	};
+
+	const SCENARIOS = [
+		{
+			platform: 'chatgpt',
+			prompt: 'I am running an ITES company and want to implement NetSuite ERP, can you provide me a list of NetSuite partners in India',
+			intro: "Since you're an IT/ITES company, here are top-rated NetSuite implementation partners in India:",
+			caption: 'Live example — "NetSuite ERP partners in India"',
+			rows: [
+				{ name: 'Dhruvsoft (NS Success)', tag: 'Licensing, implementation, managed support', rating: 4.8 },
+				{ name: 'Inspirria Cloudtech', tag: 'ERP implementation, CRM, integrations', rating: 4.7 },
+				{ name: 'SaaSworx Consulting', tag: 'NetSuite ERP, PSA, custom development', rating: 5.0, highlight: true, badge: 'Our Client' },
+				{ name: 'AGSuite Technologies', tag: 'Mid-market NetSuite implementations', rating: 4.3 }
+			]
+		},
+		{
+			platform: 'claude',
+			prompt: 'Best digital marketing agency in Noida',
+			intro: 'Here are some of the highest-rated digital marketing agencies in Noida:',
+			caption: 'Live example — "Best digital marketing agency in Noida"',
+			rows: [
+				{ name: 'Adsdad Digital', tag: 'Google Ads, SEO, PPC, Social Media', rating: 4.9 },
+				{ name: 'White Bunnie', tag: 'AI SEO, GEO/AEO & Performance Marketing', rating: 4.9, highlight: true, badge: "That's Us" },
+				{ name: 'AP Web World', tag: 'SEO, performance marketing, digital strategy', rating: 4.8 },
+				{ name: 'SolvoBiz Pvt Ltd', tag: 'SEO, PPC, branding & web development', rating: 4.7 }
+			]
+		},
+		{
+			platform: 'gemini',
+			prompt: 'Best SEO agency for SaaS startups in India',
+			intro: 'Based on client results and technical SEO depth, here are top SEO partners for SaaS startups:',
+			caption: 'Live example — "Best SEO agency for SaaS startups"',
+			rows: [
+				{ name: 'Competitor A', tag: 'Technical SEO, link building', rating: 4.6 },
+				{ name: 'White Bunnie', tag: 'AI SEO, content strategy & GEO optimization', rating: 4.9, highlight: true, badge: "That's Us" },
+				{ name: 'Competitor B', tag: 'On-page SEO, local SEO', rating: 4.5 },
+				{ name: 'Competitor C', tag: 'Content marketing, backlinks', rating: 4.3 }
+			]
+		},
+		{
+			platform: 'perplexity',
+			prompt: 'Top AI visibility and GEO optimization agency in India',
+			intro: 'Based on citation frequency across AI answer engines, here are leading GEO specialists:',
+			caption: 'Live example — "Top AI visibility (GEO) agency in India"',
+			rows: [
+				{ name: 'White Bunnie', tag: 'AI SEO, AEO & GEO for IT and SaaS brands', rating: 5.0, highlight: true, badge: "That's Us" },
+				{ name: 'Competitor D', tag: 'Generative engine optimization', rating: 4.4 },
+				{ name: 'Competitor E', tag: 'AI content visibility tracking', rating: 4.2 }
+			]
+		}
+	];
+
+	function starGlyphs(rating) {
+		const full = Math.round(rating);
+		return '★'.repeat(full) + '☆'.repeat(Math.max(0, 5 - full));
+	}
+
+	let idx = 0;
+	let paused = false;
+	let cycleTimer = null;
+
+	function wait(ms, cb) {
+		cycleTimer = setTimeout(function tick() {
+			if (paused) { cycleTimer = setTimeout(tick, 200); return; }
+			cb();
+		}, ms);
+	}
+
+	function setPlatform(key) {
+		const p = PLATFORMS[key];
+		chatwin.dataset.platform = key;
+		logoEl.src = p.logo;
+		nameEl.textContent = p.name;
+		modelEl.textContent = p.model;
+		railChips.forEach(chip => chip.classList.toggle('is-active', chip.dataset.platform === key));
+	}
+
+	function renderResultBubble(scenario) {
+		const msg = document.createElement('div');
+		msg.className = 'msg msg-assist';
+
+		const intro = document.createElement('p');
+		intro.className = 'msg-intro';
+		intro.textContent = scenario.intro;
+		msg.appendChild(intro);
+
+		const list = document.createElement('ol');
+		list.className = 'rank-list';
+		const rowEls = [];
+
+		scenario.rows.forEach((row, i) => {
+			const li = document.createElement('li');
+			li.className = 'rank-row' + (row.highlight ? ' is-highlight' : '');
+
+			const num = document.createElement('span');
+			num.className = 'rank-num';
+			num.textContent = String(i + 1);
+
+			const info = document.createElement('span');
+			info.className = 'rank-info';
+			const strong = document.createElement('strong');
+			strong.textContent = row.name;
+			const small = document.createElement('small');
+			small.textContent = row.tag;
+			info.appendChild(strong);
+			info.appendChild(small);
+
+			const starsEl = document.createElement('span');
+			starsEl.className = 'rank-stars';
+			starsEl.textContent = starGlyphs(row.rating) + ' ' + row.rating.toFixed(1);
+
+			li.appendChild(num);
+			li.appendChild(info);
+			li.appendChild(starsEl);
+
+			if (row.highlight) {
+				const badge = document.createElement('span');
+				badge.className = 'rank-badge';
+				badge.textContent = row.badge;
+				li.appendChild(badge);
+			}
+
+			list.appendChild(li);
+			rowEls.push(li);
+		});
+
+		msg.appendChild(list);
+		body.appendChild(msg);
+		body.scrollTop = body.scrollHeight;
+
+		rowEls.forEach((li, i) => {
+			setTimeout(() => {
+				li.classList.add('is-in');
+				if (li.classList.contains('is-highlight')) {
+					setTimeout(() => li.classList.add('pulse-now'), 350);
+				}
+				body.scrollTop = body.scrollHeight;
+			}, 120 * i + 60);
+		});
+	}
+
+	function typeText(text, onDone) {
+		if (reduce) { typedEl.textContent = text; cycleTimer = setTimeout(onDone, 600); return; }
+		let i = 0;
+		(function step() {
+			if (paused) { cycleTimer = setTimeout(step, 200); return; }
+			typedEl.textContent = text.slice(0, i);
+			i++;
+			if (i <= text.length) {
+				cycleTimer = setTimeout(step, 26);
+			} else {
+				cycleTimer = setTimeout(onDone, 550);
+			}
+		})();
+	}
+
+	function runCycle() {
+		const scenario = SCENARIOS[idx];
+		setPlatform(scenario.platform);
+		body.innerHTML = '';
+		body.classList.remove('is-fading');
+		typedEl.textContent = '';
+		caretEl.style.display = '';
+
+		typeText(scenario.prompt, () => {
+			caretEl.style.display = 'none';
+			typedEl.textContent = '';
+
+			const userMsg = document.createElement('div');
+			userMsg.className = 'msg msg-user';
+			userMsg.textContent = scenario.prompt;
+			body.appendChild(userMsg);
+			body.scrollTop = body.scrollHeight;
+
+			wait(500, () => {
+				const thinking = document.createElement('div');
+				thinking.className = 'msg msg-assist msg-thinking';
+				for (let d = 0; d < 3; d++) thinking.appendChild(document.createElement('span'));
+				body.appendChild(thinking);
+				body.scrollTop = body.scrollHeight;
+
+				wait(900, () => {
+					thinking.remove();
+					renderResultBubble(scenario);
+					captionEl.textContent = scenario.caption;
+
+					wait(4200, () => {
+						body.classList.add('is-fading');
+						wait(420, () => {
+							idx = (idx + 1) % SCENARIOS.length;
+							caretEl.style.display = '';
+							runCycle();
+						});
+					});
+				});
+			});
+		});
+	}
+
+	stage.addEventListener('mouseenter', () => { paused = true; });
+	stage.addEventListener('mouseleave', () => { paused = false; });
+
+	setPlatform(SCENARIOS[0].platform);
+	runCycle();
+})();
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const navPills = document.querySelectorAll(".hub-nav-pill");
   const consolePanes = document.querySelectorAll(".console-pane");
