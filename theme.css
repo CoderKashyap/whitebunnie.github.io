@@ -1130,6 +1130,13 @@ h2.h-main em {
   .nav-overlay {
     display: none;
   }
+
+  /* .nav-wrap is forced to a white background on mobile regardless of
+     nav-on-dark, so the logo must stay in its original (dark) colors
+     here or it disappears against that white bar. */
+  .navbar.nav-on-dark .nav-logo img {
+    filter: none;
+  }
 }
 
 @media (max-width: 360px) {

@@ -13,6 +13,19 @@ body {
   background: #fff;
 }
 
+/* ── Page-wide responsive gutter (theme.css's .wrap has none by default) ── */
+@media (max-width: 1240px) {
+  .wrap {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .wrap {
+    padding: 0 16px;
+  }
+}
+
 /* ══════════════════════════════════════════════════════════
    1. HERO
 ══════════════════════════════════════════════════════════ */
@@ -49,12 +62,117 @@ body {
   pointer-events: none;
 }
 
+/* ── Animated background layer: drifting orbs + rising particles ── */
+.cpage-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cpage-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  will-change: transform;
+  animation: cpageOrbDrift ease-in-out infinite;
+}
+
+.cpage-orb-1 {
+  top: -12%;
+  left: 2%;
+  width: 320px;
+  height: 320px;
+  background: rgba(58, 108, 240, .35);
+  animation-duration: 18s;
+}
+
+.cpage-orb-2 {
+  bottom: -18%;
+  right: 4%;
+  width: 380px;
+  height: 380px;
+  background: rgba(96, 165, 250, .28);
+  animation-duration: 22s;
+  animation-delay: -6s;
+}
+
+.cpage-orb-3 {
+  top: 32%;
+  left: 55%;
+  width: 220px;
+  height: 220px;
+  background: rgba(129, 140, 248, .26);
+  animation-duration: 15s;
+  animation-delay: -3s;
+}
+
+@keyframes cpageOrbDrift {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -25px) scale(1.08);
+  }
+
+  66% {
+    transform: translate(-22px, 18px) scale(.95);
+  }
+}
+
+.cpage-particle {
+  position: absolute;
+  bottom: -10px;
+  left: var(--left, 50%);
+  width: var(--size, 4px);
+  height: var(--size, 4px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .55);
+  box-shadow: 0 0 6px rgba(96, 165, 250, .6);
+  opacity: 0;
+  animation: cpageParticleFloat linear infinite;
+  animation-duration: var(--dur, 14s);
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes cpageParticleFloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: .8;
+  }
+
+  100% {
+    transform: translate(var(--drift, 20px), -520px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cpage-orb,
+  .cpage-particle {
+    animation: none;
+  }
+}
+
 .cpage-hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 0.95fr;
-  gap: 56px;
+  gap: 30px;
   align-items: center;
 }
 
@@ -94,7 +212,12 @@ body {
 
 .cpage-hero h1 em {
   font-style: normal;
-  color: #60a5fa;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #1877F2 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
 }
 
 .cpage-hero-highlight {
@@ -176,7 +299,7 @@ body {
 }
 
 .cpage-hero .cpage-social-row {
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
 
 .cpage-hero .cpage-social-row a {
@@ -234,6 +357,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: left;
   gap: 8px;
   margin-top: 4px;
   font-size: 13px;
@@ -250,11 +374,31 @@ body {
 
 /* ── Form panel ── */
 .cpage-form-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: #fff;
   border: 1px solid var(--clr-border);
   border-radius: var(--r-md);
   padding: 32px;
   box-shadow: 0 20px 50px rgba(15, 23, 42, .07);
+}
+
+.cpage-form-panel::before {
+  content: "Contact Us";
+  position: absolute;
+  z-index: -1;
+  right: -14px;
+  bottom: -34px;
+  font-size: clamp(44px, 8vw, 96px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: var(--clr-primary);
+  opacity: .05;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 
 .cpage-tabs {
@@ -341,7 +485,13 @@ body {
 
 @media (max-width: 980px) {
   .cpage-hero {
-    padding-top: 130px;
+    padding-top: 100px;
+    /* .wrap already adds its own gutter on mobile — the hero's own
+       left/right padding on top of that just double-pads it vs. every
+       other section on the page. */
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 60px;
   }
 
   .cpage-hero-grid {
@@ -353,10 +503,38 @@ body {
   .cpage-hero-sub,
   .cpage-hero-info-list {
     max-width: 100%;
+    text-align: center;
   }
+
+  /* Font-size is tied to vw (not a fixed rem floor) so the nowrap
+     "Domestic & International" phrase shrinks together with the
+     viewport instead of overflowing it. Bigger now that the extra
+     hero padding above is gone, freeing up width to work with. */
+  .cpage-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 2.9rem);
+  }
+  .cpage-hero h1 em {
+     white-space: wrap;
+  }
+
 }
 
 @media (max-width: 560px) {
+
+  
+.cpage-trust-mini {
+  justify-content: center;
+}
+
+  .cpage-hero-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
   .cpage-hero-info-item {
     padding: 11px 14px;
   }
@@ -458,14 +636,222 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════
-   4. MAP — full width, floating office card
+   4. COMPANY DETAILS — address, contact info, visual panel
+══════════════════════════════════════════════════════════ */
+.cpage-company {
+  padding: var(--section-pad) 0;
+  background: var(--clr-bg);
+}
+
+.cpage-company-info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* text-align: center; */
+}
+
+.cpage-company-grid {
+  display: flex;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Visual panel (left) ── */
+.cpage-company-visual {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 420px;
+  border-radius: var(--r-lg);
+  background: linear-gradient(155deg, var(--clr-dark-bg) 0%, #101a36 100%);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, .16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 40px;
+}
+
+.cpage-company-visual-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(var(--hero-grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hero-grid-major) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, #000 40%, transparent 90%);
+}
+
+.cpage-company-visual-glow {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  z-index: -1;
+  width: 90%;
+  height: 60%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(58, 108, 240, .32) 0%, rgba(58, 108, 240, .08) 45%, transparent 72%);
+  pointer-events: none;
+}
+
+.cpage-company-logo {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: .92;
+}
+
+.cpage-company-pin {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #60a5fa;
+  font-size: 26px;
+}
+
+.cpage-company-pin-ring {
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  animation: pulseRing 2.4s ease-out infinite;
+}
+
+.cpage-company-visual-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .16);
+  color: #dbeafe;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+.cpage-company-visual-badge i {
+  color: #60a5fa;
+}
+
+/* ── Detail cards (right) ── */
+.cpage-company-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.cpage-company-detail-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-md);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.cpage-company-detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, .08);
+  border-color: rgba(24, 119, 242, .32);
+}
+
+.cpage-company-detail-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-primary-lt);
+  color: var(--clr-primary);
+  font-size: 16px;
+}
+
+.cpage-company-detail-text strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--clr-ink);
+  margin-bottom: 4px;
+}
+
+.cpage-company-detail-text p,
+.cpage-company-detail-text a {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--clr-ink-3);
+}
+
+.cpage-company-detail-text a {
+  text-decoration: none;
+  transition: color .18s;
+}
+
+.cpage-company-detail-text a:hover {
+  color: var(--clr-primary);
+}
+
+.cpage-company-social a {
+  background: #fff;
+}
+
+@media (max-width: 980px) {
+  .cpage-company-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .cpage-company-visual {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cpage-company-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cpage-company-detail-card {
+    padding: 16px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   5. MAP — contained to the same width as the rest of the page
 ══════════════════════════════════════════════════════════ */
 .cpage-map-full {
-  position: relative;
+  padding: 0 0 var(--section-pad);
+  background: var(--clr-bg);
+}
+
+.cpage-map-card {
+  overflow: hidden;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-md);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, .07);
 }
 
 .cpage-map-full-embed {
-  height: 480px;
+  height: 420px;
 }
 
 .cpage-map-full-embed iframe {
@@ -475,75 +861,19 @@ body {
   border: 0;
 }
 
-.cpage-map-full .wrap {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.cpage-map-overlay-card {
-  pointer-events: auto;
-  position: absolute;
-  top: 32px;
-  left: 24px;
-  max-width: 320px;
-  background: #0f172a;
-  color: #fff;
-  padding: 30px 30px;
-  border-radius: var(--r-md);
-  box-shadow: 0 20px 50px rgba(15, 23, 42, .28);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.cpage-map-overlay-card h3 {
-  font-size: 21px;
-  font-weight: 700;
-}
-
-.cpage-map-overlay-card p {
-  color: rgba(255, 255, 255, .68);
-  font-size: 13.5px;
-  line-height: 1.7;
-}
-
-.cpage-map-directions {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
-  padding: 11px 20px;
-  border-radius: 10px;
-  background: #fff;
-  color: var(--clr-primary);
-  font-size: 13.5px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform .2s;
-}
-
-.cpage-map-directions:hover {
-  transform: translateY(-2px);
-  text-decoration: none;
-}
-
 @media (max-width: 640px) {
   .cpage-map-full-embed {
-    height: 360px;
+    height: 320px;
   }
 
-  .cpage-map-overlay-card {
-    left: 16px;
-    right: 16px;
-    max-width: none;
-    top: 20px;
-    padding: 22px;
-  }
+.faq-head-col .h-main {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
 }
 
 /* ══════════════════════════════════════════════════════════
-   4. FAQ (copied from the homepage layer — theme.css doesn't
+   6. FAQ (copied from the homepage layer — theme.css doesn't
       define these, and this page must work without styleBlue.css)
 ══════════════════════════════════════════════════════════ */
 .faq-section {
@@ -657,7 +987,7 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════
-   5. FORM FIELDS (copied — same reason as the FAQ block above)
+   7. FORM FIELDS (copied — same reason as the FAQ block above)
 ══════════════════════════════════════════════════════════ */
 .contact-form {
   display: flex;
@@ -737,7 +1067,7 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════
-   6. PRE-FOOTER CTA (copied)
+   8. PRE-FOOTER CTA (copied)
 ══════════════════════════════════════════════════════════ */
 .pre-footer-cta {
   position: relative;
@@ -914,7 +1244,7 @@ body {
 }
 
 /* ══════════════════════════════════════════════════════════
-   7. FOOTER (copied)
+   9. FOOTER (copied)
 ══════════════════════════════════════════════════════════ */
 .wb-footer {
   background: #0b1021;
